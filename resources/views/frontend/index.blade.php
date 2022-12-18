@@ -30,6 +30,29 @@ Welcome to E-Shop
       </div>
    </div>
 
+   <div class="py-5">
+      <div class="container">
+         <div class="row">
+            <h2>Trending Products</h2>
+            <div class="owl-carousel featured-carousel owl-theme">
+            @foreach ($trending_category as $category )
+               <div class="item">
+                  <a href="{{ url('view-category/' . $category->slug) }}">
+                     <div class="card">
+                        <img src="{{ asset('assets/uploads/category/' . $category->image) }}" alt="Category Image" class="featured-img">
+                        <div class="card-body">
+                           <h5>{{ $category->name }}</h5>
+                           <p class="float-start">{{ $category->description }}</p>
+                        </div>
+                  </a>
+               </div>
+            </div>
+            @endforeach
+            </div>
+         </div>
+      </div>
+   </div>
+
 @endsection
 
 @section("scripts")

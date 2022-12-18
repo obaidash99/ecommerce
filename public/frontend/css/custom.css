@@ -8,3 +8,7 @@
     height: 250px;
     background-size: cover;
 }
+a {
+    text-decoration: none;
+    color: blueviolet;
+}

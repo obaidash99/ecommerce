@@ -27,7 +27,7 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $ext = $file->extension();
             $filename = time() . '.' . $ext;
-            $file->move(public_path('assets/uploads/category'), $filename);
+            $file->move(public_path('assets/uploads/category/'), $filename);
             $category->image = $filename;
         }
 
@@ -63,7 +63,7 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $ext = $file->extension();
             $filename = time() . '.' . $ext;
-            $file->move(public_path('assets/uploads/category'), $filename);
+            $file->move(public_path('assets/uploads/category/'), $filename);
             $category->image = $filename;
         }
 
@@ -76,7 +76,7 @@ class CategoryController extends Controller
         $category->meta_desc = $request->meta_desc;
         $category->meta_keywords = $request->meta_keywords;
         $category->update();
-        return redirect('categories')->with('status', 'Category Updated Successfully');
+        return redirect('/categories')->with('status', 'Category Updated Successfully');
     }
 
     public function destroy($id)
@@ -89,6 +89,6 @@ class CategoryController extends Controller
             }
         }
         $category->delete();
-        return redirect('categories')->with('status', 'Category Deleted Successfully');
+        return redirect('/categories')->with('status', 'Category Deleted Successfully');
     }
 }
