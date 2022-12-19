@@ -27,11 +27,12 @@ Auth::routes();
 
 
 Route::get('/', [UserFrontendController::class, 'index']);
-Route::get('/category', [UserFrontendController::class, 'category']);
-Route::get('/view-category/{slug}', [UserFrontendController::class, 'viewCategory']);
+Route::get('category', [UserFrontendController::class, 'category']);
+Route::get('category/{slug}', [UserFrontendController::class, 'viewCategory']);
+Route::get('category/{cate_slug}/{prod_slug}', [UserFrontendController::class, 'viewProduct']);
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::group(['middleware' => ['auth', 'isAdmin']], function () {
 
@@ -41,7 +42,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
 
-    Route::get('/dashboard', [FrontendController::class, 'index']);
+    Route::get('dashboard', [FrontendController::class, 'index']);
 
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('add-category', [CategoryController::class, 'add']);

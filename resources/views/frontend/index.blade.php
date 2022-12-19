@@ -37,7 +37,7 @@ Welcome to E-Shop
             <div class="owl-carousel featured-carousel owl-theme">
             @foreach ($trending_category as $category )
                <div class="item">
-                  <a href="{{ url('view-category/' . $category->slug) }}">
+                  <a href="{{ url('category/' . $category->slug) }}">
                      <div class="card">
                         <img src="{{ asset('assets/uploads/category/' . $category->image) }}" alt="Category Image" class="featured-img">
                         <div class="card-body">

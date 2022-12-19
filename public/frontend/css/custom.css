@@ -1,6 +1,7 @@
 .carousel-img {
     width: 100vw;
     height: 60vh;
+    background-size: cover;
 }
 
 .featured-img {
@@ -11,4 +12,9 @@
 a {
     text-decoration: none;
     color: blueviolet;
+}
+
+.view-product-img {
+    width: 400px;
+    max-height: 400px;
 }

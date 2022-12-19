@@ -6,21 +6,21 @@
    </div>
    <div class="carousel-inner">
       <div class="carousel-item active">
-         <img src="{{ asset('assets/images/dummy.jpg') }}" class="d-block carousel-img" alt="...">
+         <img src="{{ asset('assets/images/cover1.png') }}" class="d-block carousel-img" alt="...">
                <div class="carousel-caption d-none d-md-block">
                <h5>First slide label</h5>
                <p>Some representative placeholder content for the first slide.</p>
       </div>
       </div>
       <div class="carousel-item">
-         <img src="{{ asset('assets/images/dummy.jpg') }}" class="d-block carousel-img" alt="...">
+         <img src="{{ asset('assets/images/sale1.jpg') }}" class="d-block carousel-img" alt="...">
                <div class="carousel-caption d-none d-md-block">
                <h5>Second slide label</h5>
                <p>Some representative placeholder content for the second slide.</p>
       </div>
       </div>
       <div class="carousel-item">
-         <img src="{{ asset('assets/images/dummy.jpg') }}" class="d-block carousel-img" alt="...">
+         <img src="{{ asset('assets/images/cover2.png') }}" class="d-block carousel-img" alt="...">
                <div class="carousel-caption d-none d-md-block">
                <h5>Third slide label</h5>
                <p>Some representative placeholder content for the third slide.</p>
