@@ -29,7 +29,7 @@ My Cart
                <div class="col-md-5">
                   <h5>{{ $item->products->name }}</h5>
                </div>
-               <div class="col-md-3">
+               <div class="col-md-3 d-flex flex-column align-items-center">
                   <input type="hidden" class="prod_id">
                   <label for="Quantity">Quantity</label>
                   <div class="input-group text-center mb-3" style="width: 130px">
