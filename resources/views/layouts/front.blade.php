@@ -18,8 +18,14 @@
    <!-- Styles -->
    <link href="{{ asset('frontend/css/bootstrap5.css') }}" rel="stylesheet">
 
+   {{-- Owl Carousel --}}
    <link href="{{ asset('frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
    <link href="{{ asset('frontend/css/owl.theme.default.min.css') }}" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+
+   {{-- Google Font --}}
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
 
    <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
 </head>
@@ -37,7 +43,11 @@
    <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>
    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
    <script src=" {{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+   <script src=" {{ asset('frontend/js/custom.js') }}"></script>
 
+   {{-- Font Awesome --}}
+   <script src="https://kit.fontawesome.com/5afc627c7f.js" crossorigin="anonymous"></script>
+   
    <!-- Sweet Alert -->
    <script src="{{ asset('admin/js/sweetalert2.all.min.js') }}"></script>
    @if (session('status'))

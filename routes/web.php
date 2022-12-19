@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -32,13 +33,13 @@ Route::get('category/{slug}', [UserFrontendController::class, 'viewCategory']);
 Route::get('category/{cate_slug}/{prod_slug}', [UserFrontendController::class, 'viewProduct']);
 
 
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::group(['middleware' => ['auth', 'isAdmin']], function () {
+Route::post('/add-to-cart', [CartController::class, 'addProduct']);
 
-//     Route::get('/dashboard', [FrontendController::class, 'index']);
-//     Route::get('/category', [CategoryController::class, 'index']);
-// });
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('cart', [CartController::class, 'viewCart']);
+});
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
 
