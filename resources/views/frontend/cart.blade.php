@@ -44,7 +44,7 @@ My Cart
                         {{-- <button class="input-group-text increment-btn">+</button> --}}
                      </div>
                      @php
-                        $total += $item->products->selling_price * $item->product_qty;
+                        $total = $total + ($item->products->selling_price * $item->product_qty);
                      @endphp
                      @else
                      <label class="badge bg-danger">Out of Stock</label>
