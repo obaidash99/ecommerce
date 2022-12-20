@@ -12,7 +12,8 @@
 
    <!-- Font Awesome Icons -->
    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-      <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>
+   
+   <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>
    <!-- Material Icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
