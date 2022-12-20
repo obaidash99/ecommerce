@@ -48,7 +48,7 @@
                      <label for="Quantity">Quantity</label>
                      <div class="input-group text-center mb-3">
                         {{-- <button class="input-group-text decrement-btn"> - </button> --}}
-                        <input type="number" min="0" max="10" name="quantity" value="0" class="form-control qty-input text-center">
+                        <input type="number" min="0" max="10" name="quantity" value="1" class="form-control qty-input text-center">
                         {{-- <button class="input-group-text increment-btn">+</button> --}}
                      </div>
                   </div>
