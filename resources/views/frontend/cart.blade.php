@@ -33,9 +33,9 @@ My Cart
                   <input type="hidden" class="prod_id">
                   <label for="Quantity">Quantity</label>
                   <div class="input-group text-center mb-3" style="width: 130px">
-                     <button class="input-group-text decrement-btn">-</button>
-                     <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $item->product_qty }}">
-                     <button class="input-group-text increment-btn">+</button>
+                     {{-- <button class="input-group-text decrement-btn">-</button> --}}
+                     <input type="number" min="1" max="10" name="quantity" class="form-control qty-input text-center" id="qty-input" value="{{ $item->product_qty }}">
+                     {{-- <button class="input-group-text increment-btn">+</button> --}}
                   </div>
                </div>
                <div class="col-md-2">
