@@ -57,9 +57,11 @@
                      <button type="button" class="btn btn-success me-3 float-start">
                         Add to Wishlist <i class="fa fa-heart"></i>
                      </button>
+                     @if ($product->qty > 0)
                      <button type="button" class="btn btn-primary me-3 float-start add-to-cart">
                         Add to Cart <i class="fa fa-cart-shopping"></i>
                      </button>
+                     @endif
                   </div>
                </div>
             </div>
