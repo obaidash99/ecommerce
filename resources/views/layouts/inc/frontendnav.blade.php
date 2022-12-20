@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light shadow bg-light">
    <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">E-Shop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
                <a class="nav-link" href="{{ url('category') }}">Category</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="{{ url('cart') }}">My Cart <i class="fa fa-cart-shopping"></i></a>
+               <a class="nav-link" href="{{ url('cart') }}">Cart <i class="fa fa-cart-shopping"></i></a>
             </li>
 
             @guest
@@ -33,10 +33,15 @@
                      {{ Auth::user()->name }}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <li><a class="dropdown-item" href="#">My Profile</a></li>
-                     <li class="nav-item d-flex align-items-center">
+                     <li>
+                        <a class="dropdown-item" href="{{ url('my-orders') }}"><i class="fa fa-bag-shopping"></i> &nbsp;Orders</a>
+                     </li>
+                     <li>
+                        <a class="dropdown-item" href="{{ url('#') }}"><i class="fa-solid fa-user"></i> &nbsp;Profile</a>
+                     </li>
+                     <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();" class="nav-link text-body font-weight-bold px-0">
+                           document.getElementById('logout-form').submit();" class="dropdown-item">
                            <i class="fa fa-sign-out me-sm-1"></i>
                            <span class="d-sm-inline d-none">{{ __('Logout') }}</span>
                         </a>

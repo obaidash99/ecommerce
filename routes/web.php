@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
+use App\Http\Controllers\Frontend\UserController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -44,6 +45,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('cart', [CartController::class, 'viewCart']);
     Route::get('checkout', [CheckOutController::class, 'index']);
     Route::post('place-order', [CheckOutController::class, 'placeOrder']);
+
+    Route::get('my-orders', [UserController::class, 'index']);
+    Route::get('view-order/{id}', [UserController::class, 'view']);
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {

@@ -40,6 +40,14 @@ class CheckOutController extends Controller
         $order->city = $request->city;
         $order->state = $request->state;
         $order->zipcode = $request->zipcode;
+
+        $total = 0;
+        $cart_items_total = Cart::where('user_id', Auth::id())->get();
+        foreach ($cart_items_total as $prod) {
+            $total = $total + ($prod->products->selling_price);
+        }
+        $order->total_price = $total;
+
         $order->tracking_no = $request->fname . rand(111, 9999);
         $order->save();
 
