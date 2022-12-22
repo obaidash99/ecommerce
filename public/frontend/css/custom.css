@@ -39,3 +39,13 @@ a {
     font-size: 12px;
     font-weight: 700;
 }
+
+.order-details label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.order-details div {
+    font-size: 14px;
+    padding: 5px;
+}

@@ -17,7 +17,7 @@
                   <table class="table table-bordered">
                      <thead>
                         <tr>
-                           <tr>Order Date</tr>
+                           <th>Order Date</th>
                            <th>Tracking Number</th>
                            <th>Total Price</th>
                            <th>Status</th>

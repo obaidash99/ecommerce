@@ -33,9 +33,9 @@
                      {{ Auth::user()->name }}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <li>
-                        <a class="dropdown-item" href="{{ url('my-orders') }}"><i class="fa fa-bag-shopping"></i> &nbsp;Orders</a>
-                     </li>
+{{--                     <li>--}}
+{{--                        <a class="dropdown-item" href="{{ url('my-orders') }}"><i class="fa fa-bag-shopping"></i> &nbsp;Orders</a>--}}
+{{--                     </li>--}}
                      <li>
                         <a class="dropdown-item" href="{{ url('#') }}"><i class="fa-solid fa-user"></i> &nbsp;Profile</a>
                      </li>
