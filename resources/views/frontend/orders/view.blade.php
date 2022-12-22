@@ -46,7 +46,7 @@
                                     <td>{{ $order->product_qty }}</td>
                                     <td>{{ $order->price }}</td>
                                     <td>
-                                       <img src="{{ asset('assets/uploads/products/') .  $order->products->image }}" alt="product image">
+                                       <img src="{{ asset('assets/uploads/products/') .  $order->products->image }}" width="50px" alt="product image">
                                     </td>
                                     <td>
                                        <a href="{{ url('view-order/' . $order->id) }}" class="btn btn-primary">View</a>

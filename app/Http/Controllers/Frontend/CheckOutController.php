@@ -61,7 +61,7 @@ class CheckOutController extends Controller
             ]);
 
             $prod = Product::where('id', $item->prod_id)->first();
-            $prod->qty = $prod->qty - $item->product_qty;
+            $prod->qty -= $item->product_qty;
             $prod->update();
         }
 
