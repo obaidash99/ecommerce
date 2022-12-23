@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
@@ -69,10 +70,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
 
-    Route::get('users', [FrontendController::class, 'users']);
-
     Route::get('orders', [OrdersController::class, 'index']);
     Route::get('admin/view-order/{id}', [OrdersController::class, 'view']);
     Route::put('update-order/{id}', [OrdersController::class, 'updateOrder']);
     Route::get('order-history', [OrdersController::class, 'orderHistory']);
+
+    Route::get('users', [DashboardController::class, 'users']);
+    Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);
 });
