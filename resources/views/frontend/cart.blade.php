@@ -7,7 +7,7 @@ My Cart
 
 @section('content')
 
-<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+<div class="py-2 shadow-sm bg-warning border-top">
    <div class="container">
       <h6 class="mb-6">
          <a href="{{ url('/') }}">Home</a> / 
@@ -17,15 +17,15 @@ My Cart
 </div>
 
 
-<div class="container my-5">
-   <div class="card shadow product-data">
+<div class="container mt-3">
+   <div class="card shadow ">
       @if($cart_items->count() > 0)
          <div class="card-body">
             @php
                $total = 0;
             @endphp
             @foreach ($cart_items as $item )
-               <div class="row my-2 d-flex align-items-center">
+               <div class="row my-2 d-flex align-items-center product-data">
                   <div class="col-md-2">
                      <img src="{{ asset('assets/uploads/products/' . $item->products->image) }}" alt="product image" class="cart-product-img">
                   </div>

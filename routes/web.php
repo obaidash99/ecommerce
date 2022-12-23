@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -43,13 +44,20 @@ Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
 Route::post('update-cart-item', [CartController::class, 'updateProduct']);
 
+Route::post('add-to-wishlist', [WishlistController::class, 'addToWishlist']);
+Route::post('remove-wishlist-item', [WishlistController::class, 'removeItem']);
+
+
 Route::group(['middleware' => ['auth']], function () {
+
     Route::get('cart', [CartController::class, 'viewCart']);
     Route::get('checkout', [CheckOutController::class, 'index']);
     Route::post('place-order', [CheckOutController::class, 'placeOrder']);
 
     Route::get('my-orders', [UserController::class, 'index']);
     Route::get('view-order/{id}', [UserController::class, 'view']);
+
+    Route::get('wishlist', [WishlistController::class, 'index']);
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {

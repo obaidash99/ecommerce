@@ -54,7 +54,7 @@
                   </div>
                   <div class="col-md-10">
                      <br>
-                     <button type="button" class="btn btn-success me-3 float-start">
+                     <button type="button" class="btn btn-success me-3 float-start add-to-wishlist">
                         Add to Wishlist <i class="fa fa-heart"></i>
                      </button>
                      @if ($product->qty > 0)
