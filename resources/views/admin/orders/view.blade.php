@@ -13,7 +13,7 @@
                <div class="card-header">
                   <h4 class="text-center">
                      View Order
-                     <a href="{{url('my-orders')}}" class="btn btn-warning text-white float-end">Back</a>
+                     <a href="{{url('orders')}}" class="btn btn-warning text-white float-end">Back</a>
                   </h4>
                </div>
                <div class="card-body">
@@ -60,6 +60,20 @@
                            </tbody>
                         </table>
                         <h4 class="px-2">Grand Total:<span class="float-end">$ {{ $orders->total_price }}</span></h4>
+
+                        <div class="form-floating mt-3 px-2 order-details">
+                           <form action="{{ url('update-order/' . $orders->id) }}" method="POST">
+                              @csrf
+                              @method('PUT')
+                              <label for="floatingSelect">Order Status</label>
+                              <select class="form-select" id="floatingSelect" name="order_status">
+                                 <option {{ $orders->status == '0' ? 'selected' : '' }} value="0">In Proccess</option>
+                                 <option {{ $orders->status == '1' ? 'selected' : '' }} value="1">Completed</option>
+                              </select>
+                              <button type="submit" class="btn btn-primary mt-3 float-end">Update</button>
+                           </form>
+                        </div>
+
                      </div>
                   </div>
                </div>

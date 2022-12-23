@@ -10,8 +10,8 @@
          <div class="card">
                <div class="card-header">
                   <h3 class="text-center">
-                     New Orders
-                     <a href="{{ url('order-history') }}" class="btn btn-warning float-end">Order History</a>
+                     Order History
+                     <a href="{{ url('orders') }}" class="btn btn-warning float-end">New Orders</a>
                   </h4>
                </div>
                <div class="card-body">
