@@ -11,4 +11,8 @@ class FrontendController extends Controller
     {
         return view('admin.index');
     }
+    public function users()
+    {
+        return view('admin.index');
+    }
 }
