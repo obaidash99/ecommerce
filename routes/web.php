@@ -40,10 +40,13 @@ Route::get('category/{cate_slug}/{prod_slug}', [UserFrontendController::class, '
 
 // Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('load-cart-data', [CartController::class, 'cartCount']);
 Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
 Route::post('update-cart-item', [CartController::class, 'updateProduct']);
 
+
+Route::get('load-wishlist-data', [WishlistController::class, 'wishlistCount']);
 Route::post('add-to-wishlist', [WishlistController::class, 'addToWishlist']);
 Route::post('remove-wishlist-item', [WishlistController::class, 'removeItem']);
 

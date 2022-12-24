@@ -48,4 +48,10 @@ class WishlistController extends Controller
             return response()->json(['status' => 'Login To Continue']);
         }
     }
+
+    public function wishlistCount()
+    {
+        $wish_count = Wishlist::where('user_id', Auth::id())->count();
+        return response()->json(['count' => $wish_count]);
+    }
 }
