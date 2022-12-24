@@ -131,19 +131,54 @@
                   </div>
                </div>
             </div>
+            <div class="col-md-12">
+               <hr>
+               <h3>Description</h3>
+               <p class="mt-3">{{ $product->description }}</p>
+            </div>
+            <hr/>
          </div>
-         <div class="col-md-12">
-            <hr>
-            <h3>Description</h3>
-            <p class="mt-3">{{ $product->description }}</p>
+
+         <div class="row">
+            <div class="col-md-4">
+               <!-- Button trigger modal -->
+               <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Rate this {{ $product->name }}
+               </button>
+
+               <a href="{{ url('add-review/' . $product->slug . '/' . 'userreview') }}" class="btn btn-link">
+                  Write A Review
+               </a>
+            </div>
+            <div class="col-md-8">
+               @foreach ($reviews as $review)
+                  <div class="user-review">
+                     <label for="" >{{ $review->user->name }} {{ $review->user->lname }}</label>
+                     @if ($review->user_id == Auth::id())
+                        <a href="{{ url('edit-review/' . $product->slug . '/userreview') }}" class="float-end text-sm btn btn-primary">Edit</a>
+                     @endif
+                     <br/>
+
+                     @php
+                        $rating = APP\Models\Rating::where('prod_id', $product->id)->where('user_id', $review->user->id)->first();
+                     @endphp
+
+                     @if ($rating)
+                        @php $user_rate = $rating->stars_rated @endphp
+                        @for ($i=1; $i <= $user_rate; $i++)
+                           <i class="fa fa-star checked"></i>
+                           @endfor
+                           @for ($j = $user_rate+1; $j<6; $j++)
+                           <i class="fa fa-star"></i>
+                        @endfor
+                     @endif
+                     <small>Reviewed at {{ $review->created_at->format('d M Y') }}</small>
+                     <p>{{ $review->user_review }}</p>
+                  </div>
+               @endforeach
+            </div>
          </div>
-         <hr/>
-         <div class="col-md-12">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-               Rate this {{ $product->name }}
-            </button>
-         </div>
+
 
       </div>
    </div>
