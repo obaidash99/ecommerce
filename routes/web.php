@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
+use App\Http\Controllers\Frontend\RatingController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Middleware\AdminMiddleware;
@@ -64,6 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('wishlist', [WishlistController::class, 'index']);
 
+    Route::post('add-rating', [RatingController::class, 'add']);
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {

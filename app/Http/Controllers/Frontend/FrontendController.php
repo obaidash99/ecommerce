@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Rating;
+use Auth;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -38,7 +40,17 @@ class FrontendController extends Controller
             if (Product::where('slug', $prod_slug)->exists()) {
 
                 $product = Product::where('slug', $prod_slug)->first();
-                return view('frontend.products.view', compact('product'));
+                $rating = Rating::where('prod_id', $product->id)->get();
+                $rating_sum = Rating::where('prod_id', $product->id)->sum('stars_rated');
+                $user_rating = Rating::where('prod_id', $product->id)->where('user_id', Auth::id())->first();
+
+                if ($rating->count()) {
+                    $rating_value = $rating_sum / $rating->count();
+                } else {
+                    $rating_value = 0;
+                }
+
+                return view('frontend.products.view', compact('product', 'rating', 'rating_value', 'user_rating'));
             } else {
                 return redirect('/')->with('status', "Product Not Found");
             }
