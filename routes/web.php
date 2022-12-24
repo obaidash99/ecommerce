@@ -57,10 +57,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('checkout', [CheckOutController::class, 'index']);
     Route::post('place-order', [CheckOutController::class, 'placeOrder']);
 
+    Route::post('proceed-to-pay', [CheckOutController::class, 'razorpayCheck']);
+
     Route::get('my-orders', [UserController::class, 'index']);
     Route::get('view-order/{id}', [UserController::class, 'view']);
 
     Route::get('wishlist', [WishlistController::class, 'index']);
+
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {

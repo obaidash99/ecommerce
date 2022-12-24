@@ -41,6 +41,9 @@ class CheckOutController extends Controller
         $order->state = $request->state;
         $order->zipcode = $request->zipcode;
 
+        $order->payment_mode = $request->payment_mode;
+        $order->payment_id = $request->payment_id;
+
         $total = 0;
         $cart_items_total = Cart::where('user_id', Auth::id())->get();
         foreach ($cart_items_total as $prod) {
@@ -82,6 +85,48 @@ class CheckOutController extends Controller
         $cart_items = Cart::where('user_id', Auth::id())->get();
         Cart::destroy($cart_items);
 
-        return redirect('/')->with('status', 'Order Placed Successfully!');
+
+        if ($request->payment_mode == "Paid by PayPal") {
+            return response()->json(['status' => 'Order Placed Successfully!']);
+        } else {
+            return redirect('/')->with('status', 'Order Placed Successfully!');
+        }
+
+        // return redirect('/')->with('status', 'Order Placed Successfully!');
+    }
+
+    public function razorpayCheck(Request $request)
+    {
+        $cart_items = Cart::where('user_id', Auth::id())->get();
+
+        $total_price = 0;
+        foreach ($cart_items as $item) {
+            $total_price += $item->products->selling_price * $item->product_qty;
+        }
+
+        $fname = $request->fname;
+        $lname = $request->lname;
+        $email = $request->email;
+        $phone = $request->phone;
+        $address1 = $request->address1;
+        $address2 = $request->address2;
+        $country = $request->country;
+        $city = $request->city;
+        $state = $request->state;
+        $zipcode = $request->zipcode;
+
+        return response()->json([
+            "fname" => $fname,
+            "lname" => $lname,
+            "email" => $email,
+            "phone" => $phone,
+            "address1" => $address1,
+            "address2" => $address2,
+            "country" => $country,
+            "city" => $city,
+            "state" => $state,
+            "zipcode" => $zipcode,
+            "total_price" => $total_price,
+        ]);
     }
 }

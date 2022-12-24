@@ -46,6 +46,7 @@
    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
    <script src=" {{ asset('frontend/js/owl.carousel.min.js') }}"></script>
    <script src=" {{ asset('frontend/js/custom.js') }}"></script>
+   <script src=" {{ asset('frontend/js/checkout.js') }}"></script>
 
    {{-- Font Awesome --}}
    <script src="https://kit.fontawesome.com/5afc627c7f.js" crossorigin="anonymous"></script>
