@@ -39,8 +39,8 @@ Route::get('category', [UserFrontendController::class, 'category']);
 Route::get('category/{slug}', [UserFrontendController::class, 'viewCategory']);
 Route::get('category/{cate_slug}/{prod_slug}', [UserFrontendController::class, 'viewProduct']);
 
-
-// Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('product-list', [UserFrontendController::class, 'productListAjax']);
+Route::post('search-product', [UserFrontendController::class, 'searchProduct']);
 
 Route::get('load-cart-data', [CartController::class, 'cartCount']);
 Route::post('add-to-cart', [CartController::class, 'addProduct']);

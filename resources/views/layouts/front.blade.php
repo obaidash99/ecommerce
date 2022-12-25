@@ -29,6 +29,9 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
 
+   {{-- Auto Complete --}}
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
    <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
 </head>
 
@@ -42,11 +45,29 @@
 
 
    <!-- Scripts -->
-   {{-- <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script> --}}
+   <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>
    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
    <script src=" {{ asset('frontend/js/owl.carousel.min.js') }}"></script>
    <script src=" {{ asset('frontend/js/custom.js') }}"></script>
    <script src=" {{ asset('frontend/js/checkout.js') }}"></script>
+   
+
+   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   <script>
+      var availableTags = [];
+      $.ajax({
+         method: 'GET',
+         url: '/product-list',
+         success: function(response){
+            startAutoComplete(response)
+         }
+      });
+      function startAutoComplete(availableTags){
+         $( "#search-product" ).autocomplete({
+            source: availableTags
+         });
+      }
+   </script>
 
    {{-- Font Awesome --}}
    <script src="https://kit.fontawesome.com/5afc627c7f.js" crossorigin="anonymous"></script>
