@@ -43,6 +43,12 @@
          @yield('content')
       </div>
 
+      <div class="whatsapp-chat">
+         <a href="https://wa.me/+201099506547?text=Could%20you%20help%20me%20with%20this%20issue?" target="_blank">
+            <img src="{{ asset('assets/images/whatsapp-icon.webp') }}" alt="whatsapp-chat">
+         </a>
+      </div>
+
 
    <!-- Scripts -->
    <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>

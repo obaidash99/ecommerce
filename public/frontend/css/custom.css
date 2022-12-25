@@ -91,3 +91,14 @@ a {
 .checked {
     color: #ffd000;
 }
+
+.whatsapp-chat {
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+}
+
+.whatsapp-chat a img {
+    height: 50px;
+    width: 50px;
+}
