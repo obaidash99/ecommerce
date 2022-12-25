@@ -58,7 +58,7 @@
          Swal.fire({
             title: 'Message!',
             text: "{{ session('status') }}",
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Ok'
          })
       </script>
    @endif

@@ -18,7 +18,7 @@ My Cart
 
 
 <div class="container mt-3">
-   <div class="card shadow ">
+   <div class="card shadow cart-items">
       @if($cart_items->count() > 0)
          <div class="card-body">
             @php

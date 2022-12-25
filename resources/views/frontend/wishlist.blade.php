@@ -9,7 +9,7 @@ My Wishlist
 
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
    <div class="container">
-      <h6 class="mb-6">
+      <h6 class="mb-0">
          <a href="{{ url('/') }}">Home</a> / 
          <a href="{{ url('wishlist') }}">Wishlist</a>
       </h6>
@@ -18,7 +18,7 @@ My Wishlist
 
 
 <div class="container my-5">
-   <div class="card shadow">
+   <div class="card shadow wishlist-items">
       <div class="card-body">
          @if($wishlist ->count() > 0)
             @foreach ($wishlist as $item )
