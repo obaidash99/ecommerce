@@ -79,7 +79,7 @@
                </h2>
                <hr>
                <label class="me-3 text-bold">Original Price: <s>$ {{ $product->original_price }}</s></label>
-               <label class="me-3 text-bold">Original Price: $ {{ $product->selling_price }}</label>
+               <label class="me-3 text-bold">Selling Price: $ {{ $product->selling_price }}</label>
                @php
                   $rate_num = number_format($rating_value);
                @endphp
@@ -134,7 +134,7 @@
             <div class="col-md-12">
                <hr>
                <h3>Description</h3>
-               <p class="mt-3">{{ $product->description }}</p>
+               <p class="mt-3">{{ $product->small_description }}</p>
             </div>
             <hr/>
          </div>

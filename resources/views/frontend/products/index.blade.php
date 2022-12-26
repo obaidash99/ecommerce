@@ -26,8 +26,8 @@
                         <img src="{{ asset('assets/uploads/products/' . $product->image) }}" alt="Product Image" class="featured-img">
                         <div class="card-body">
                            <h5>{{ $product->name }}</h5>
-                           <span class="float-start">{{ $product->selling_price }}</span>
-                           <span class="float-end"><s>{{ $product->original_price }}</s></span>
+                           <span class="float-start">$ {{ $product->selling_price }}</span>
+                           <span class="float-end"><s>$ {{ $product->original_price }}</s></span>
                         </div>
                      </a>
                   </div>

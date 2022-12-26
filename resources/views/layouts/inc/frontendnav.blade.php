@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light shadow bg-light">
    <div class="container d-flex justify-content-between">
-      <a class="navbar-brand" href="{{ url('/') }}">E-Shop</a>
+      <a class="navbar-brand" href="{{ url('/') }}">Simple Electronics</a>
       <div class="search-bar">
          <form action="{{ url('search-product') }}" method="POST">
             @csrf
