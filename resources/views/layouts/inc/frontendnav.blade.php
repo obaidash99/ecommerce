@@ -57,9 +57,9 @@
                   <li>
                      <a class="dropdown-item" href="{{ url('my-orders') }}"><i class="fa fa-bag-shopping"></i> &nbsp;Orders</a>
                   </li>
-                     <li>
+                     {{-- <li>
                         <a class="dropdown-item" href="{{ url('#') }}"><i class="fa-solid fa-user"></i> &nbsp;Profile</a>
-                     </li>
+                     </li> --}}
                      <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();" class="dropdown-item">
@@ -71,7 +71,7 @@
                         </form>
                      </li>
                      {{-- <li><hr class="dropdown-divider"></li> --}}
-                     <li><a class="dropdown-item" href="#">Something else here</a></li>
+                     {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
                   </ul>
                </li>
 
