@@ -13,13 +13,13 @@
 {{--            </form>--}}
 {{--        </div>--}}
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mb-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsFurni">
             <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                <li class="nav-item active"><a class="nav-link" href="{{asset('#')}}">Home</a></li>
+                <li class="nav-item active"><a class="nav-link" href="{{asset('/')}}">Home</a></li>
                 <li><a class="nav-link" href="{{ asset('/') }}">Shop</a></li>
                 <li><a class="nav-link" href="{{asset('category')}}">Categories</a></li>
                 <li><a class="nav-link" href="{{asset('#')}}">About us</a></li>

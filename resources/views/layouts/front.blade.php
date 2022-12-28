@@ -40,9 +40,7 @@
 
    @include('layouts.inc.frontendnav')
 
-      <div class="container-fluid py-4">
          @yield('content')
-      </div>
 
       <div class="whatsapp-chat">
          <a href="https://wa.me/+201099506547?text=Could%20you%20help%20me%20with%20this%20issue?" target="_blank">

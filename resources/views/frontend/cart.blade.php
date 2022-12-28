@@ -10,14 +10,14 @@ My Cart
 <div class="py-2 shadow-sm bg-warning border-top">
    <div class="container">
       <h6 class="mb-6">
-         <a href="{{ url('/') }}">Home</a> / 
+         <a href="{{ url('/') }}">Home</a> /
          <a href="{{ url('cart') }}">Cart</a>
       </h6>
    </div>
 </div>
 
 
-<div class="container mt-3">
+<div class="container mt-5">
    <div class="card shadow cart-items">
       @if($cart_items->count() > 0)
          <div class="card-body">
