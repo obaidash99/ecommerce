@@ -24,7 +24,7 @@
                 <li><a class="nav-link" href="{{asset('category')}}">Categories</a></li>
                 <li><a class="nav-link" href="{{asset('#')}}">About us</a></li>
                 <li><a class="nav-link" href="{{asset('#')}}">Blog</a></li>
-                <li><a class="nav-link" href="{{asset('#')}}">Contact us</a></li>
+                <li><a class="nav-link" href="{{asset('contact')}}">Contact us</a></li>
             </ul>
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">

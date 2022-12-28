@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
 use App\Http\Controllers\Frontend\NewsletterController;
 use App\Http\Controllers\Frontend\RatingController;
@@ -50,6 +51,8 @@ Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
 Route::post('update-cart-item', [CartController::class, 'updateProduct']);
 
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/send-message', [ContactController::class, 'storeMessage'])->name('front.storeMessage');
 
 Route::get('load-wishlist-data', [WishlistController::class, 'wishlistCount']);
 Route::post('add-to-wishlist', [WishlistController::class, 'addToWishlist']);

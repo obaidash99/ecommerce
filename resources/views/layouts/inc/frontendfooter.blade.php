@@ -58,7 +58,7 @@
                             <li><a href="#">About us</a></li>
                             <li><a href="{{ asset('category') }}">Categories</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="{{ asset('contact') }}">Contact us</a></li>
                         </ul>
                     </div>
 

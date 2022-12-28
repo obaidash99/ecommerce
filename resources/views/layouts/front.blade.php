@@ -48,7 +48,6 @@
          </a>
       </div>
 
-
    @include('layouts.inc.frontendfooter')
    <!-- Scripts -->
    <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>
