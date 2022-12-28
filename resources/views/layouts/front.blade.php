@@ -12,13 +12,14 @@
 
    <!-- Font Awesome Icons -->
    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-   
+
    <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>
    <!-- Material Icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
    <!-- Styles -->
    <link href="{{ asset('frontend/css/bootstrap5.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/tiny-slider.css') }}" rel="stylesheet">
 
    {{-- Owl Carousel --}}
    <link href="{{ asset('frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
@@ -27,7 +28,7 @@
 
    {{-- Google Font --}}
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
    {{-- Auto Complete --}}
    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -50,13 +51,15 @@
       </div>
 
 
+   @include('layouts.inc.frontendfooter')
    <!-- Scripts -->
    <script src=" {{ asset('frontend/js/jquery-3.6.2.min.js') }}"></script>
    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
    <script src=" {{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+   <script src=" {{ asset('frontend/js/tiny-slider.js') }}"></script>
    <script src=" {{ asset('frontend/js/custom.js') }}"></script>
    <script src=" {{ asset('frontend/js/checkout.js') }}"></script>
-   
+
 
    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
    <script>
@@ -77,7 +80,7 @@
 
    {{-- Font Awesome --}}
    <script src="https://kit.fontawesome.com/5afc627c7f.js" crossorigin="anonymous"></script>
-   
+
    <!-- Sweet Alert -->
    <script src="{{ asset('admin/js/sweetalert2.all.min.js') }}"></script>
    @if (session('status'))
