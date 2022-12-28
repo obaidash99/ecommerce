@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
+use App\Http\Controllers\Frontend\NewsletterController;
 use App\Http\Controllers\Frontend\RatingController;
 use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserController;
@@ -38,6 +39,8 @@ Route::get('/', [UserFrontendController::class, 'index']);
 Route::get('category', [UserFrontendController::class, 'category']);
 Route::get('category/{slug}', [UserFrontendController::class, 'viewCategory']);
 Route::get('category/{cate_slug}/{prod_slug}', [UserFrontendController::class, 'viewProduct']);
+
+Route::post('newsletter', [NewsletterController::class, 'add']);
 
 Route::get('product-list', [UserFrontendController::class, 'productListAjax']);
 Route::post('search-product', [UserFrontendController::class, 'searchProduct']);

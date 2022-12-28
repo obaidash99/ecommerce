@@ -15,12 +15,13 @@
                         <span>Subscribe to Newsletter</span>
                     </h3>
 
-                    <form action="#" class="row g-3">
+                    <form action="{{ url('newsletter') }}" class="row g-3" method="POST">
+                        @csrf
                         <div class="col-auto">
-                            <input type="text" class="form-control" placeholder="Enter your name">
+                            <input type="text" class="form-control" placeholder="Enter your name" name="name">
                         </div>
                         <div class="col-auto">
-                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <input type="email" class="form-control" placeholder="Enter your email" name="email">
                         </div>
                         <div class="col-auto">
                             <button class="btn btn-primary">
