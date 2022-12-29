@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Frontend\CartController;
@@ -102,6 +103,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('admin/view-order/{id}', [OrdersController::class, 'view']);
     Route::put('update-order/{id}', [OrdersController::class, 'updateOrder']);
     Route::get('order-history', [OrdersController::class, 'orderHistory']);
+
+    Route::get('messages', [MessagesController::class, 'index']);
+    Route::get('view-message/{id}', [MessagesController::class, 'view']);
+    Route::get('delete-message/{id}', [MessagesController::class, 'destroy']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);
