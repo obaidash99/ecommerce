@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
 use App\Http\Controllers\Frontend\NewsletterController;
+use App\Http\Controllers\Frontend\ProductsController;
 use App\Http\Controllers\Frontend\RatingController;
 use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserController;
@@ -43,6 +44,8 @@ Route::get('category/{slug}', [UserFrontendController::class, 'viewCategory']);
 Route::get('category/{cate_slug}/{prod_slug}', [UserFrontendController::class, 'viewProduct']);
 
 Route::post('newsletter', [NewsletterController::class, 'add']);
+
+Route::get('all-products', [ProductsController::class, 'index']);
 
 Route::get('product-list', [UserFrontendController::class, 'productListAjax']);
 Route::post('search-product', [UserFrontendController::class, 'searchProduct']);
@@ -108,7 +111,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('view-message/{id}', [MessagesController::class, 'view']);
     Route::get('delete-message/{id}', [MessagesController::class, 'destroy']);
 
-    Route::post('newsletters', [NewsletterController::class, 'view']);
+    Route::get('newsletters', [NewsletterController::class, 'view']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);

@@ -19,12 +19,12 @@
 
         <div class="collapse navbar-collapse" id="navbarsFurni">
             <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                <li class="nav-item active"><a class="nav-link" href="{{asset('/')}}">Home</a></li>
-                <li><a class="nav-link" href="{{ asset('/') }}">Shop</a></li>
-                <li><a class="nav-link" href="{{asset('category')}}">Categories</a></li>
-                <li><a class="nav-link" href="{{asset('#')}}">About us</a></li>
-                <li><a class="nav-link" href="{{asset('#')}}">Blog</a></li>
-                <li><a class="nav-link" href="{{asset('contact')}}">Contact us</a></li>
+                <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="{{asset('/')}}">Home</a></li>
+                <li class="nav-item {{Request::is('all-products') ? 'active' : ''}}"><a class="nav-link" href="{{ asset('all-products') }}">Products</a></li>
+                <li class="nav-item {{Request::is('category') ? 'active' : ''}}"><a class="nav-link" href="{{asset('category')}}">Categories</a></li>
+                <li class="nav-item {{Request::is('about') ? 'active' : ''}}"><a class="nav-link" href="{{asset('#')}}">About us</a></li>
+                <li class="nav-item {{Request::is('blog') ? 'active' : ''}}"><a class="nav-link" href="{{asset('#')}}">Blog</a></li>
+                <li class="nav-item {{Request::is('contact') ? 'active' : ''}}"><a class="nav-link" href="{{asset('contact')}}">Contact us</a></li>
             </ul>
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
