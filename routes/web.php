@@ -108,6 +108,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('view-message/{id}', [MessagesController::class, 'view']);
     Route::get('delete-message/{id}', [MessagesController::class, 'destroy']);
 
+    Route::post('newsletters', [NewsletterController::class, 'view']);
+
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);
 });

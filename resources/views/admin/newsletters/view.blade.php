@@ -19,17 +19,11 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 order-details">
-                                <h4>Message Details</h4>
-                                <label for="" class="text-bold">First Name</label>
-                                <div class="border px-2">{{ $message->fname }}</div>
-                                <label for="" class="mt-3 text-bold">Last Name</label>
-                                <div class="border px-2">{{ $message->lname }}</div>
+                                <h4>Newsletter to Subscribe</h4>
+                                <label for="" class="text-bold">Name</label>
+                                <div class="border px-2">{{ $newsletters->name }}</div>
                                 <label for="" class="mt-3 text-bold">Email</label>
-                                <div class="border px-2">{{ $message->email }}</div>
-                                <label for="" class="mt-3 text-bold">Subject</label>
-                                <div class="border px-2">{{ $message->subject }}</div>
-                                <label for="" class="mt-3 text-bold">Message Content</label>
-                                <div class="border px-2">{{ $message->content }}</div>
+                                <div class="border px-2">{{ $newsletters->email }}</div>
                             </div>
                         </div>
                     </div>
