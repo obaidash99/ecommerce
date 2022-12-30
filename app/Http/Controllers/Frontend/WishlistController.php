@@ -31,7 +31,7 @@ class WishlistController extends Controller
                 return response()->json(['status' => "Product doesn't Exist"]);
             }
         } else {
-            return response()->json(['status' => 'Login To Continue']);
+            return response()->json(['status' => 'Login To Continue', 'url' =>route('login')]);
         }
     }
 

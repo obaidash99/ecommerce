@@ -52,7 +52,7 @@
    </div>
 </div>
 
-
+{{--Website Map--}}
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
    <div class="container">
       <h6 class="mb-0">
@@ -142,11 +142,11 @@
          <div class="row">
             <div class="col-md-4">
                <!-- Button trigger modal -->
-               <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               <button type="button" class="mt-3 btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Rate this {{ $product->name }}
                </button>
 
-               <a href="{{ url('add-review/' . $product->slug . '/' . 'userreview') }}" class="btn btn-link mt-3">
+               <a href="{{ url('add-review/' . $product->slug . '/' . 'userreview') }}" class="mt-3 btn btn-link">
                   Write A Review
                </a>
             </div>

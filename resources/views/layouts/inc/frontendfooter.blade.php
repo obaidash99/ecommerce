@@ -68,7 +68,7 @@
                 <div class="row links-wrap">
                     <div class="col-6 col-sm-6 col-md-3">
                         <ul class="list-unstyled">
-                            <li><a href="#">About us</a></li>
+                            <li><a href="{{ asset('about-us') }}">About us</a></li>
                             <li><a href="{{ asset('category') }}">Categories</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="{{ asset('contact') }}">Contact us</a></li>

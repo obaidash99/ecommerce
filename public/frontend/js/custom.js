@@ -46,7 +46,8 @@ $(document).ready(function () {
                 productQty: productQty || "1",
             },
             success: function (response) {
-                Swal.fire(response.status);
+                // Swal.fire(response.status);
+                window.location.replace(response.url)
                 loadCart();
             },
         });
@@ -63,7 +64,8 @@ $(document).ready(function () {
                 productId: productId,
             },
             success: function (response) {
-                Swal.fire(response.status);
+                window.location.replace(response.url)
+                // Swal.fire(response.status);
                 loadWishlist();
             },
         });

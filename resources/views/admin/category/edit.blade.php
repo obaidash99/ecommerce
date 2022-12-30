@@ -8,7 +8,7 @@
    </div>
 
    <div class="card-body">
-      <form action="{{ url('update-category/' . $category->id) }}" method="POST">
+      <form action="{{ url('update-category/' . $category->id) }}" method="POST" enctype="multipart/form-data">
          @csrf
          @method('PUT')
          <div class="row">
@@ -48,7 +48,7 @@
             <div class="col-md-6">
                <input type="file" name="image" class="form-control border p-2">
             </div>
-            
+
             @if($category->image)
                <img src="{{ asset('assets/uploads/category/' . $category->image) }}" class='edit-image mb-3' alt="category image"/>
             @endif

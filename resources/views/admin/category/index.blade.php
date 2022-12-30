@@ -24,7 +24,7 @@
             <tr>
                <td>{{ $item->id }}</td>
                <td>{{ $item->name }}</td>
-               <td>{{ $item->description }}</td>
+                <td>{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</td>
                <td>
                   <img src="{{ asset('assets/uploads/category/' . $item->image) }}" class="cate-image" alt="img not found">
                </td>
@@ -36,6 +36,7 @@
             @endforeach
          </tbody>
       </table>
+       {{ $category->links() }}
    </div>
 </div>
 

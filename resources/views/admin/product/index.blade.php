@@ -27,7 +27,7 @@
                <td>{{ $item->id }}</td>
                <td>{{ $item->category->name}}</td>
                <td>{{ $item->name }}</td>
-               <td>{{ $item->description }}</td>
+               <td>{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</td>
                <td>{{ $item->selling_price }}</td>
                <td>
                   <img src="{{ asset('assets/uploads/products/' . $item->image) }}" class="cate-image" alt="img not found">

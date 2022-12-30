@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
+use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -63,6 +65,8 @@ Route::get('load-wishlist-data', [WishlistController::class, 'wishlistCount']);
 Route::post('add-to-wishlist', [WishlistController::class, 'addToWishlist']);
 Route::post('remove-wishlist-item', [WishlistController::class, 'removeItem']);
 
+Route::get('about-us', [AboutUsController::class, 'index']);
+
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -113,6 +117,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-message/{id}', [MessagesController::class, 'destroy']);
 
     Route::get('newsletters', [NewsletterController::class, 'view']);
+
+    Route::get('team', [TeamController::class, 'index']);
+    Route::get('add-member', [TeamController::class, 'add']);
+    Route::post('insert-member', [TeamController::class, 'insert']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);
