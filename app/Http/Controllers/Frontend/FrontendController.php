@@ -32,7 +32,7 @@ class FrontendController extends Controller
             $product = Product::where('cate_id', $category->id)->where('status', '0')->get();
             return view('frontend.products.index', compact('category', 'product'));
         } else {
-            return redirect('/')->with('status', "Slug Doesn't Exisits");
+            return redirect('/')->with('status', "Slug Doesn't Exisit");
         }
     }
     public function viewProduct($cate_slug, $prod_slug)

@@ -46,6 +46,7 @@ Route::get('category/{cate_slug}/{prod_slug}', [UserFrontendController::class, '
 Route::post('newsletter', [NewsletterController::class, 'add']);
 
 Route::get('all-products', [ProductsController::class, 'index']);
+Route::get('view-product/{slug}', [ProductsController::class, 'viewProduct']);
 
 Route::get('product-list', [UserFrontendController::class, 'productListAjax']);
 Route::post('search-product', [UserFrontendController::class, 'searchProduct']);

@@ -56,9 +56,9 @@
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
    <div class="container">
       <h6 class="mb-0">
-         <a href="{{ url('category') }}">Collections</a> / 
+         <a href="{{ url('category') }}">Collections</a> /
          <a href="{{ url('category/' . $product->category->slug ) }}">{{ $product->category->name }}</a> /
-         <a href="{{ url('category/' . $product->category->slug . '/' . $product->slug  ) }}">{{ $product->name }}</a> 
+         <a href="{{ url('category/' . $product->category->slug . '/' . $product->slug  ) }}">{{ $product->name }}</a>
       </h6>
    </div>
 </div>
@@ -146,7 +146,7 @@
                   Rate this {{ $product->name }}
                </button>
 
-               <a href="{{ url('add-review/' . $product->slug . '/' . 'userreview') }}" class="btn btn-link">
+               <a href="{{ url('add-review/' . $product->slug . '/' . 'userreview') }}" class="btn btn-link mt-3">
                   Write A Review
                </a>
             </div>

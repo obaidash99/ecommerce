@@ -9,14 +9,13 @@
    </div>
 
    <div class="card-body">
-      <table class="table text-center table-bordered table-striped">
+      <table class="table text-center table-bordered table-striped w-100">
          <thead>
             <tr>
                <th>ID</th>
                <th>Category</th>
                <th>Name</th>
                <th>Description</th>
-               <th>Original Price</th>
                <th>Selling Price</th>
                <th>Image</th>
                <th>Action</th>
@@ -29,7 +28,6 @@
                <td>{{ $item->category->name}}</td>
                <td>{{ $item->name }}</td>
                <td>{{ $item->description }}</td>
-               <td>{{ $item->original_price }}</td>
                <td>{{ $item->selling_price }}</td>
                <td>
                   <img src="{{ asset('assets/uploads/products/' . $item->image) }}" class="cate-image" alt="img not found">

@@ -20,8 +20,7 @@
                 @foreach ($products as $product )
                     <div class="col-md-3 mb-3">
                         <div class="card">
-{{--                            <a href="{{ url('category/' . $category->slug . '/' . $product->slug) }}">--}}
-                            <a href="#">
+                            <a href="{{ url('view-product/' . $product->slug) }}">
                                 <img src="{{ asset('assets/uploads/products/' . $product->image) }}" alt="Product Image" class="featured-img">
                                 <div class="card-body">
                                     <h5>{{ $product->name }}</h5>
