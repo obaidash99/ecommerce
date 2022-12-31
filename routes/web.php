@@ -121,6 +121,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('team', [TeamController::class, 'index']);
     Route::get('add-member', [TeamController::class, 'add']);
     Route::post('insert-member', [TeamController::class, 'insert']);
+    Route::get('edit-member/{id}', [TeamController::class, 'edit']);
+    Route::put('update-member/{id}', [TeamController::class, 'update']);
+    Route::get('delete-member/{id}', [TeamController::class, 'destroy']);
+    Route::get('view-member/{id}', [TeamController::class, 'view']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);

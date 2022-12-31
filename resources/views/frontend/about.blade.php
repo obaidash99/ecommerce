@@ -107,10 +107,10 @@
                 <!-- Start Column 1 -->
                 @foreach($team as $member)
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-                    <img src="{{ asset("assets/uploads/team/" . $member->image) }}" class="img-fluid mb-5">
+                    <img src="{{ asset("assets/uploads/team/" . $member->image) }}" class="img-fluid mb-5" alt="team member">
                     <h3><a href="#"><span class="">{{ $member->name }}</span></a></h3>
                     <span class="d-block position mb-4">{{ $member->title }}</span>
-                    <p>{{ $member->description }}</p>
+                    <p>{{ \Illuminate\Support\Str::limit($member->description, 150, $end='...') }}</p>
                     <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
                 </div>
                 @endforeach
