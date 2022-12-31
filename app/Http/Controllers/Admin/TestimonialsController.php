@@ -13,6 +13,10 @@ class TestimonialsController extends Controller
         return view('admin.testimonial.index', compact('testimonials'));
     }
 
+    public function add() {
+        return view('admin.testimonial.add-testimonial');
+    }
+
     public function insert(Request $request)
     {
         $request->validate([
@@ -38,14 +42,30 @@ class TestimonialsController extends Controller
         return redirect('/testimonials')->with('status', 'Testimonial Added Successfully');
     }
 
-    public function add() {
-        return view('admin.testimonial.add-testimonial');
-    }
-
-
     public function edit($id) {
         $testimonial = Testimonial::find($id);
         return view('admin.testimonial.edit', compact('testimonial'));
+    }
+
+    public function update(Request  $request, $id) {
+        $testimonial = Testimonial::find($id);
+        if($request->hasFile('image')) {
+            $path = 'assets/uploads/testimonials/' . $request->image;
+            if (file_exists($path)) {
+                unlink($path);
+            }
+            $file = $request->file('image');
+            $ext = $file->extension();
+            $filename = time() . '.' . $ext;
+            $file->move(public_path('assets/uploads/testimonials'), $filename);
+            $testimonial->image = $filename;
+        }
+
+        $testimonial->name = $request->name;
+        $testimonial->title = $request->title;
+        $testimonial->description = $request->description;
+        $testimonial->update();
+        return redirect('testimonials')->with('status', 'Testimonial Updated Successfully!');
     }
 
     public function destroy($id) {
@@ -57,7 +77,7 @@ class TestimonialsController extends Controller
             }
         }
         $testimonial->delete();
-        return redirect('testimonials')->with('status', 'Team Member Deleted Successfully!');
+        return redirect('testimonials')->with('status', 'Testimonial Deleted Successfully!');
     }
 
     public function view($id){

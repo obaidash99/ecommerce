@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\ProductController;
@@ -134,6 +135,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('update-testimonial/{id}', [TestimonialsController::class, 'update']);
     Route::get('delete-testimonial/{id}', [TestimonialsController::class, 'destroy']);
     Route::get('view-testimonial/{id}', [TestimonialsController::class, 'view']);
+
+    Route::get('features', [FeaturesController::class, 'index']);
+    Route::get('add-feature', [FeaturesController::class, 'add']);
+    Route::post('insert-feature', [FeaturesController::class, 'insert']);
+    Route::get('edit-feature/{id}', [FeaturesController::class, 'edit']);
+    Route::put('update-feature/{id}', [FeaturesController::class, 'update']);
+    Route::get('delete-feature/{id}', [FeaturesController::class, 'destroy']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);

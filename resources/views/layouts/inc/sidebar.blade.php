@@ -66,11 +66,11 @@
                  </a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link text-white {{ Request::is('newsletters') ? 'active bg-info' : '' }}" href="{{ url('newsletters') }}">
+                 <a class="nav-link text-white {{ Request::is('features') ? 'active bg-info' : '' }}" href="{{ url('features') }}">
                      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                         <i class="material-icons opacity-10">feed</i>
+                         <span class="material-symbols-outlined">trail_length</span>
                      </div>
-                     <span class="nav-link-text ms-1">Newsletter</span>
+                     <span class="nav-link-text ms-1">Why Us Features</span>
                  </a>
              </li>
              <li class="nav-item">
@@ -90,11 +90,19 @@
                  </a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link text-white {{ Request::is('testimonials') ? 'active bg-info' : '' }}" href="{{ url('testimonials') }}">
+                 <a class="nav-link text-white {{ Request::is('testimonials') || Request::is('add-testimonial') ? 'active bg-info' : '' }}" href="{{ url('testimonials') }}">
                      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                          <i class="material-icons opacity-10">quiz</i>
                      </div>
                      <span class="nav-link-text ms-1">Testimonials</span>
+                 </a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link text-white {{ Request::is('newsletters') ? 'active bg-info' : '' }}" href="{{ url('newsletters') }}">
+                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                         <i class="material-icons opacity-10">feed</i>
+                     </div>
+                     <span class="nav-link-text ms-1">Newsletter</span>
                  </a>
              </li>
              <li class="nav-item">
