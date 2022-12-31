@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\TestimonialsController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckOutController;
@@ -125,6 +126,14 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('update-member/{id}', [TeamController::class, 'update']);
     Route::get('delete-member/{id}', [TeamController::class, 'destroy']);
     Route::get('view-member/{id}', [TeamController::class, 'view']);
+
+    Route::get('testimonials', [TestimonialsController::class, 'index']);
+    Route::get('add-testimonial', [TestimonialsController::class, 'add']);
+    Route::post('insert-testimonial', [TestimonialsController::class, 'insert']);
+    Route::get('edit-testimonial/{id}', [TestimonialsController::class, 'edit']);
+    Route::put('update-testimonial/{id}', [TestimonialsController::class, 'update']);
+    Route::get('delete-testimonial/{id}', [TestimonialsController::class, 'destroy']);
+    Route::get('view-testimonial/{id}', [TestimonialsController::class, 'view']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);

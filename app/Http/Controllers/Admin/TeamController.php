@@ -12,6 +12,7 @@ class TeamController extends Controller
         $team = Team::paginate(10);
         return view('admin.team.index', compact('team'));
     }
+
     public function add() {
         return view('admin.team.add-member');
     }
