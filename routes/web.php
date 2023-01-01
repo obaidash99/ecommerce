@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
+use App\Http\Controllers\Admin\StaticContentController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TestimonialsController;
 use App\Http\Controllers\Frontend\AboutUsController;
@@ -142,6 +143,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('edit-feature/{id}', [FeaturesController::class, 'edit']);
     Route::put('update-feature/{id}', [FeaturesController::class, 'update']);
     Route::get('delete-feature/{id}', [FeaturesController::class, 'destroy']);
+
+    Route::get('static-content', [StaticContentController::class, 'index']);
+    Route::get('add-content', [StaticContentController::class, 'add']);
+//    Route::post('insert-feature', [StaticContentController::class, 'insert']);
+//    Route::get('edit-feature/{id}', [StaticContentController::class, 'edit']);
+//    Route::put('update-feature/{id}', [StaticContentController::class, 'update']);
+//    Route::get('delete-feature/{id}', [StaticContentController::class, 'destroy']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);
