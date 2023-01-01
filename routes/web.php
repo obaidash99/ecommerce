@@ -146,7 +146,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('static-content', [StaticContentController::class, 'index']);
     Route::get('add-content', [StaticContentController::class, 'add']);
-//    Route::post('insert-feature', [StaticContentController::class, 'insert']);
+    Route::post('insert-content', [StaticContentController::class, 'insert']);
 //    Route::get('edit-feature/{id}', [StaticContentController::class, 'edit']);
 //    Route::put('update-feature/{id}', [StaticContentController::class, 'update']);
 //    Route::get('delete-feature/{id}', [StaticContentController::class, 'destroy']);

@@ -5,6 +5,7 @@
     <div class="card table-responsive table-body">
         <div class="card-header">
             <h3>About Us Page Static Content</h3>
+            <a href="{{url('add-content')}}" class="btn btn-warning text-white float-end">Add Content</a>
             <hr>
         </div>
 
@@ -43,7 +44,7 @@
                             <img src="{{ asset('assets/uploads/static/' . $item->image) }}" class="cate-image" alt="img not found">
                         </td>
                         <td>
-                            <a href="{{ url('view-content/' . $item->id) }}" class="btn btn-warning">
+                            <a href="{{ url('about-us') }}" class="btn btn-warning" target="_blank">
                                 <span class="material-symbols-outlined">visibility</span>
                             </a>
                             <a href="{{ url('edit-content/' . $item->id) }}" class="btn btn-info">

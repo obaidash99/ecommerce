@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="hero-img-wrap">
-                        <img src="{{ asset("frontend/images/couch.png") }}" class="img-fluid">
+                        <img src="{{ asset("assets/uploads/static/" . $static->heading_image) }}" class="img-fluid" alt="main image">
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ class AboutUsController extends Controller
         $team = Team::all();
         $testimonials = Testimonial::all();
         $features = Features_About::all();
-        $static = StaticAbout::where('status', '0')->first();
+        $static = StaticAbout::where('status', '1')->first();
         return view('frontend.about', compact('team', 'testimonials', 'features', 'static'));
     }
 }

@@ -4,7 +4,7 @@
 
 <div class="card">
    <div class="card-header">
-      <h2>Add Product</h2>
+      <h2>Add Static Content For About Us Page</h2>
    </div>
 
    <div class="card-body">
@@ -12,68 +12,45 @@
          @csrf
          <div class="row">
             <div class="col-md-12 mb-3">
-               <select class="form-select p-2" name="cate_id">
-                  <option value="">Select Category</option>
-                  @foreach ($category as $cate)
-                  <option value="{{ $cate->id }}">{{ $cate->name }}</option>
-                  @endforeach
+                <label for="status">Status</label>
+               <select class="form-select p-2" name="status" id="status">
+                  <option value="">Select Status</option>
+                  <option value="0">Hidden</option>
+                  <option value="1">Visible</option>
                </select>
             </div>
-            <div class="col-md-6 mb-3">
-               <label for="name">Name</label>
-               <input type="text" name="name" id="name" class="form-control border p-2">
-            </div>
-            <div class="col-md-6 mb-3">
-               <label for="slug">Slug</label>
-               <input type="text" name="slug" id="slug" class="form-control border p-2">
+            <div class="col-md-12 mb-3">
+               <label for="heading_title">Heading Title</label>
+               <input type="text" name="heading_title" id="heading_title" class="form-control border p-2">
             </div>
             <div class="col-md-12 mb-3">
-               <label for="desc">Small Description</label>
-               <textarea name="small_description" rows="3" id='desc' class="form-control border p-2"></textarea>
+               <label for="heading_desc">Heading Description</label>
+                <textarea name="heading_desc" rows="3" id='heading_desc' class="form-control border p-2"></textarea>
             </div>
-            <div class="col-md-12 mb-3">
-               <label for="desc">Description</label>
-               <textarea name="description" rows="3" id='desc' class="form-control border p-2"></textarea>
-            </div>
-            <div class="col-md-6 mb-3">
-               <label for="original_price">Original Price</label>
-               <input type="number" name="original_price" id="original_price" class="form-control border p-2">
-            </div>
-            <div class="col-md-6 mb-3">
-               <label for="selling_price">Selling Price</label>
-               <input type="number" name="selling_price" id="selling_price" class="form-control border p-2">
-            </div>
-            <div class="col-md-6 mb-3">
-               <label for="tax">Tax</label>
-               <input type="number" name="tax" id="tax" class="form-control border p-2">
-            </div>
-            <div class="col-md-6 mb-3">
-               <label for="qty">Quantity</label>
-               <input type="number" name="qty" id="qty" class="form-control border p-2">
-            </div>
-            <div class="col-md-6 md-3">
-               <label for="status">Status</label>
-               <input type="checkbox" name="status" id="status" class="border p-2">
-            </div>
-            <div class="col-md-6 md-3">
-               <label for="trending">Trending</label>
-               <input type="checkbox" name="trending" id="trending" class="border p-2">
-            </div>
-            <div class="col-md-12 mb-3">
-               <label for="meta_title">Meta Title</label>
-               <input type="text" name="meta_title" id="meta_title" class="form-control border p-2">
-            </div>
-            <div class="col-md-12 mb-3">
-               <label for="meta_description">Meta Description</label>
-               <textarea name="meta_description" rows="3" id='meta_description' class="form-control border p-2"></textarea>
-            </div>
-            <div class="col-md-12 mb-3">
-               <label for="meta_keywords">Meta Keywords</label>
-               <textarea name="meta_keywords" rows="3" id='meta_keywords' class="form-control border p-2"></textarea>
-            </div>
-            <div class="col-md-12 mb-3">
-               <input type="file" name="image" class="form-control border p-2">
-            </div>
+             <div class="col-md-12 mb-3">
+                 <label for="heading_image">Heading Image</label>
+                 <input type="file" name="heading_image" id="heading_image" class="form-control border p-2">
+             </div>
+             <div class="col-md-6 mb-3">
+                 <label for="heading_btn_1">First Button Text</label>
+                 <input type="text" name="heading_btn_1" id="heading_btn_1" class="form-control border p-2">
+             </div>
+             <div class="col-md-6 mb-3">
+                 <label for="heading_btn_2">Second Button Text</label>
+                 <input type="text" name="heading_btn_2" id="heading_btn_2" class="form-control border p-2">
+             </div>
+             <div class="col-md-12 mb-3">
+                 <label for="why_us_title">Why Us Title</label>
+                 <input type="text" name="why_us_title" id="why_us_title" class="form-control border p-2">
+             </div>
+             <div class="col-md-12 mb-3">
+                 <label for="why_us_desc">Why Us Description</label>
+                 <textarea name="why_us_desc" rows="3" id='why_us_desc' class="form-control border p-2"></textarea>
+             </div>
+             <div class="col-md-12 mb-3">
+                 <label for="why_us_image">Why Us Image</label>
+                 <input type="file" name="why_us_image" id="why_us_image" class="form-control border p-2">
+             </div>
             <div class="col-md-12 mb-3">
                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
