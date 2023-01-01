@@ -8,3 +8,33 @@
     width: 200px;
     height: 200px;
 }
+
+.dashboard .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.dashboard .row div {
+    height: 120px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard .row div:hover {
+    background-color: #eeeeee;
+}
+
+.dashboard .row div a {
+    transition: all 0.3s ease;
+}
+
+.dashboard .row div:hover a {
+    color: orangered;
+    transform: scale(1.3);
+}

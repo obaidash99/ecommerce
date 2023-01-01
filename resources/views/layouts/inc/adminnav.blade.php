@@ -5,8 +5,8 @@
          <ul class="navbar-nav justify-content-end float-end">
             <li class="nav-item d-flex align-items-center"> --}}
                <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
+                  <div class="d-flex justify-content-end">
+                     <div class="col-md-2 d-flex align-items-center justify-content-center">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();" class="nav-link text-body font-weight-bold px-0 mt-3 text-end">
                            <i class="fa fa-sign-out me-sm-1"></i>
