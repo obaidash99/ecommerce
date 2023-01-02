@@ -76,6 +76,60 @@ class StaticContentController extends Controller
         return redirect('/static-content')->with('status', 'Content Added Successfully');
     }
 
+    public function editWhy($id) {
+        $static_why = WhyAbout::find($id);
+        return view('admin.static.edit-why', compact('static_why'));
+    }
+
+    public function editHead($id) {
+        $static_head = HeadAbout::find($id);
+        return view('admin.static.edit-head', compact('static_head'));
+    }
+
+    public function updateWhy(Request  $request, $id) {
+        $static_why = WhyAbout::find($id);
+        if($request->hasFile('image')) {
+            $path = 'assets/uploads/team/' . $request->image;
+            if (file_exists($path)) {
+                unlink($path);
+            }
+            $file = $request->file('image');
+            $ext = $file->extension();
+            $filename = time() . '.' . $ext;
+            $file->move(public_path('assets/uploads/team'), $filename);
+            $static_why->image = $filename;
+        }
+
+        $static_why->status = $request->status;
+        $static_why->heading = $request->heading;
+        $static_why->description = $request->description;
+        $static_why->update();
+        return redirect('static-content')->with('status', 'Content Updated Successfully!');
+    }
+
+    public function updateHead(Request  $request, $id) {
+        $static_head = HeadAbout::find($id);
+        if($request->hasFile('image')) {
+            $path = 'assets/uploads/team/' . $request->image;
+            if (file_exists($path)) {
+                unlink($path);
+            }
+            $file = $request->file('image');
+            $ext = $file->extension();
+            $filename = time() . '.' . $ext;
+            $file->move(public_path('assets/uploads/team'), $filename);
+            $static_head->image = $filename;
+        }
+
+        $static_head->status = $request->status;
+        $static_head->heading = $request->heading;
+        $static_head->description = $request->description;
+        $static_head->heading_btn_1 = $request->heading_btn_1;
+        $static_head->heading_btn_2 = $request->heading_btn_2;
+        $static_head->update();
+        return redirect('static-content')->with('status', 'Content Updated Successfully!');
+    }
+
     public function destroyAbout($id) {
         $item = HeadAbout::find($id);
         if ($item->image) {

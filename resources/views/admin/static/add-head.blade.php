@@ -53,18 +53,6 @@
                  <label for="heading_btn_2">Second Button Text</label>
                  <input type="text" name="heading_btn_2" id="heading_btn_2" class="form-control border p-2">
              </div>
-{{--             <div class="col-md-12 mb-3">--}}
-{{--                 <label for="why_us_title">Why Us Title</label>--}}
-{{--                 <input type="text" name="why_us_title" id="why_us_title" class="form-control border p-2">--}}
-{{--             </div>--}}
-{{--             <div class="col-md-12 mb-3">--}}
-{{--                 <label for="why_us_desc">Why Us Description</label>--}}
-{{--                 <textarea name="why_us_desc" rows="3" id='why_us_desc' class="form-control border p-2"></textarea>--}}
-{{--             </div>--}}
-{{--             <div class="col-md-12 mb-3">--}}
-{{--                 <label for="why_us_image">Why Us Image</label>--}}
-{{--                 <input type="file" name="image" id="why_us_image" class="form-control border p-2">--}}
-{{--             </div>--}}
             <div class="col-md-12 mb-3">
                <button type="submit" class="btn btn-primary">Submit</button>
             </div>

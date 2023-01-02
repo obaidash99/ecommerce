@@ -149,8 +149,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('add-why', [StaticContentController::class, 'addWhy']);
     Route::post('insert-head', [StaticContentController::class, 'insertHead']);
     Route::post('insert-why', [StaticContentController::class, 'insertWhy']);
-//    Route::get('edit-feature/{id}', [StaticContentController::class, 'edit']);
-//    Route::put('update-feature/{id}', [StaticContentController::class, 'update']);
+    Route::get('edit-head/{id}', [StaticContentController::class, 'editHead']);
+    Route::get('edit-why/{id}', [StaticContentController::class, 'editWhy']);
+    Route::put('update-head/{id}', [StaticContentController::class, 'updateHead']);
+    Route::put('update-why/{id}', [StaticContentController::class, 'updateWhy']);
     Route::get('delete-head/{id}', [StaticContentController::class, 'destroyAbout']);
     Route::get('delete-why/{id}', [StaticContentController::class, 'destroyWhy']);
 
