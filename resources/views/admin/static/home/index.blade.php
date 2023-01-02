@@ -3,9 +3,9 @@
 @section('content')
 
     {{--    Heading Part--}}
-    <div class="card table-responsive table-body vh-100">
+    <div class="card table-responsive table-body">
         <div class="card-header">
-            <h3>Home Page - Head Static Content</h3>
+            <h3>Home Page - Head Section Content</h3>
 {{--            <a href="{{url('add-home-head')}}" class="btn btn-warning text-white float-end">Add Content</a>--}}
         </div>
 
@@ -48,4 +48,40 @@
         </div>
     </div>
 
+    {{--    Second Section Part--}}
+    <div class="card table-responsive table-body mt-5">
+        <div class="card-header">
+            <h3>Home Page - Second Section Content</h3>
+                        <a href="{{url('add-home-sec')}}" class="btn btn-warning text-white float-end">Add Content</a>
+        </div>
+
+        <div class="card-body">
+            <table class="table text-center table-bordered table-striped w-100">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>title</th>
+                    <th>description</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                 <tr>
+                    <td>{{ $static_sec->id }}</td>
+                    <td>{{ $static_sec->title}}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($static_sec->description, 50, $end='...') }}</td>
+                    <td>{{ $static_sec->btn_content ?: '' }}</td>
+                    <td>
+                        <a href="{{ url('/') }}" class="btn btn-warning" target="_blank">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </a>
+                        <a href="{{ url('edit-home-sec/' . $static_sec->id) }}" class="btn btn-info">
+                            <span class="material-symbols-outlined">edit</span>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection

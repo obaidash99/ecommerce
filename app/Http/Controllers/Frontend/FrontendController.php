@@ -8,6 +8,7 @@ use App\Models\HeadHome;
 use App\Models\Product;
 use App\Models\Rating;
 use App\Models\Review;
+use App\Models\ThreeProduct;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class FrontendController extends Controller
         $featured_products = Product::where('trending', '1')->take(15)->get();
         $trending_category = Category::where('popular', '1')->take(15)->get();
         $static_head = HeadHome::first();
-        return view('frontend.index', compact('featured_products', 'trending_category', 'some_products', 'static_head'));
+        $static_sec = ThreeProduct::first();
+        return view('frontend.index', compact('featured_products', 'trending_category', 'some_products', 'static_head', 'static_sec'));
     }
 
     public function category()

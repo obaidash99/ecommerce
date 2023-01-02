@@ -162,6 +162,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('insert-home-head', [HomeContentController::class, 'insertHead']);
     Route::get('edit-home-head/{id}', [HomeContentController::class, 'editHead']);
     Route::put('update-home-head/{id}', [HomeContentController::class, 'updateHead']);
+    Route::get('add-home-sec', [HomeContentController::class, 'addSec']);
+    Route::post('insert-home-sec', [HomeContentController::class, 'insertSec']);
+    Route::get('edit-home-sec/{id}', [HomeContentController::class, 'editSec']);
+    Route::put('update-home-sec/{id}', [HomeContentController::class, 'updateSec']);
 
 
 
