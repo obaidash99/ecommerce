@@ -40,9 +40,6 @@
                             <a href="{{ url('edit-home-head/' . $static_head->id) }}" class="btn btn-info">
                                 <span class="material-symbols-outlined">edit</span>
                             </a>
-                            <a href="{{ url('delete-home-head/' . $static_head->id) }}" class="btn btn-danger">
-                                <span class="material-symbols-outlined">delete</span>
-                            </a>
                         </td>
                     </tr>
 {{--                @endforeach--}}

@@ -5,7 +5,7 @@
     {{--    Heading Part--}}
     <div class="card table-responsive table-body">
         <div class="card-header">
-            <h3>About Us - Head Static Content</h3>
+            <h3>About Us - Head Section</h3>
 {{--            <a href="{{url('add-head')}}" class="btn btn-warning text-white float-end">Add Content</a>--}}
 {{--            <hr>--}}
         </div>
@@ -43,9 +43,6 @@
                             <a href="{{ url('edit-head/' . $item->id) }}" class="btn btn-info">
                                 <span class="material-symbols-outlined">edit</span>
                             </a>
-                            <a href="{{ url('delete-head/' . $item->id) }}" class="btn btn-danger">
-                                <span class="material-symbols-outlined">delete</span>
-                            </a>
                         </td>
                     </tr>
                 @endforeach
@@ -60,7 +57,7 @@
     {{--    Why Us Part--}}
     <div class="card table-responsive table-body mt-5">
         <div class="card-header">
-            <h3>About Us - Why Us Static Content</h3>
+            <h3>About Us - Why Us Section</h3>
 {{--            <a href="{{url('add-why')}}" class="btn btn-warning text-white float-end">Add Content</a>--}}
 {{--            <hr>--}}
         </div>
@@ -93,9 +90,6 @@
                             </a>
                             <a href="{{ url('edit-why/' . $item->id) }}" class="btn btn-info">
                                 <span class="material-symbols-outlined">edit</span>
-                            </a>
-                            <a href="{{ url('delete-why/' . $item->id) }}" class="btn btn-danger">
-                                <span class="material-symbols-outlined">delete</span>
                             </a>
                         </td>
                     </tr>
