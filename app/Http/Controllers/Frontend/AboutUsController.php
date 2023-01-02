@@ -7,6 +7,7 @@ use App\Models\Features_About;
 use App\Models\HeadAbout;
 use App\Models\Team;
 use App\Models\Testimonial;
+use App\Models\WhyAbout;
 use Illuminate\Http\Request;
 
 class AboutUsController extends Controller
@@ -16,6 +17,7 @@ class AboutUsController extends Controller
         $testimonials = Testimonial::all();
         $features = Features_About::all();
         $static_head = HeadAbout::where('status', '1')->latest()->first();
-        return view('frontend.about', compact('team', 'testimonials', 'features', 'static_head'));
+        $static_why = WhyAbout::where('status', '1')->latest()->first();
+        return view('frontend.about', compact('team', 'testimonials', 'features', 'static_head', 'static_why'));
     }
 }

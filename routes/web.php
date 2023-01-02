@@ -146,10 +146,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('static-content', [StaticContentController::class, 'index']);
     Route::get('add-head', [StaticContentController::class, 'addHead']);
+    Route::get('add-why', [StaticContentController::class, 'addWhy']);
     Route::post('insert-head', [StaticContentController::class, 'insertHead']);
+    Route::post('insert-why', [StaticContentController::class, 'insertWhy']);
 //    Route::get('edit-feature/{id}', [StaticContentController::class, 'edit']);
 //    Route::put('update-feature/{id}', [StaticContentController::class, 'update']);
-//    Route::get('delete-feature/{id}', [StaticContentController::class, 'destroy']);
+    Route::get('delete-head/{id}', [StaticContentController::class, 'destroyAbout']);
+    Route::get('delete-why/{id}', [StaticContentController::class, 'destroyWhy']);
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);

@@ -37,9 +37,8 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6">
-                    <h2 class="section-title">Why Choose Us</h2>
-                    <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
-                        imperdiet dolor tempor tristique.</p>
+                    <h2 class="section-title">{{ $static_why->heading }}</h2>
+                    <p>{{ $static_why->description }}</p>
                     <div class="row my-5">
                         @foreach($features as $item)
                             <div class="col-6 col-md-6">
@@ -57,7 +56,7 @@
 
                 <div class="col-lg-5">
                     <div class="img-wrap">
-                        <img src="{{ asset("frontend/images/why-choose-us-img.jpg") }}" alt="Image" class="img-fluid">
+                        <img src="{{ asset("assets/uploads/static/" . $static_why->image) }}" alt="Image" class="img-fluid">
                     </div>
                 </div>
 

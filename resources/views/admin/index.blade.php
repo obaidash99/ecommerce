@@ -43,6 +43,14 @@
                     </div>
                     <div>
                         <h3>
+                            <a class="nav-link {{ Request::is('static-content') ? 'active bg-info' : '' }}" href="{{ url('static-content') }}">
+                                <i class="material-icons opacity-10">content_copy</i>
+                                <span>About Page Content</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <div>
+                        <h3>
                             <a class="nav-link {{ Request::is('features') ? 'active bg-info' : '' }}" href="{{ url('features') }}">
                                 <i class="material-icons opacity-10">star_half</i>
                                 <span>Why Us Features</span>
