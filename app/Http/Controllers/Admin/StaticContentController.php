@@ -3,34 +3,32 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\StaticAbout;
+use App\Models\HeadAbout;
 use Illuminate\Http\Request;
 
 class StaticContentController extends Controller
 {
     public function index() {
-        $static = StaticAbout::all();
-        return view('admin.static.index', compact('static'));
+        $static_head = HeadAbout::all();
+        return view('admin.static.index', compact('static_head'));
     }
 
-    public function add() {
-        return view('admin.static.add');
+    public function addHead() {
+        return view('admin.static.add-head');
     }
 
-    public function insert(Request $request)
+    public function insertHead(Request $request)
     {
         $request->validate([
-            'heading_title' => 'required|string|min:3|max:50',
-            'heading_desc' => 'required|max:300',
-            'heading_image' => 'required|image|mimes:jpeg,png,jpg',
-            'heading_btn_1' => 'string',
-            'heading_btn_2' => 'string',
-            'why_us_title' => 'required|string|min:3|max:50',
-            'why_us_desc' => 'required|max:300',
-            'why_us_image' => 'required|image|mimes:jpeg,png,jpg',
+            'status' => 'required',
+            'heading' => 'required|string|min:3|max:50',
+            'description' => 'required|string|min:20|max:300',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
+            'heading_btn_1' => 'required|string|min:3|max:50',
+            'heading_btn_2' => 'required|string|min:3|max:50',
         ]);
 
-        $static = new StaticAbout();
+        $static = new HeadAbout();
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->extension();
@@ -39,11 +37,13 @@ class StaticContentController extends Controller
             $static->image = $filename;
         }
 
-        $static->name = $request->name;
-        $static->title = $request->title;
+        $static->status = $request->status;
+        $static->heading = $request->heading;
         $static->description = $request->description;
+        $static->heading_btn_1 = $request->heading_btn_1;
+        $static->heading_btn_2 = $request->heading_btn_2;
         $static->save();
-        return redirect('/testimonials')->with('status', 'Content Added Successfully');
+        return redirect('/static-content')->with('status', 'Content Added Successfully');
     }
 
 }

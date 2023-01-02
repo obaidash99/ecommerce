@@ -12,14 +12,17 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>{{ $static->heading_title }}</h1>
-                        <p class="mb-4">D{{ $static->heading_desc }}</p>
-                        <p><a href="" class="btn btn-secondary me-2">{{ $static->heading_btn_1 }}</a><a href="#" class="btn btn-white-outline">{{ $static->heading_btn_1 }}</a></p>
+                        <h1>{{ $static_head->heading }}</h1>
+                        <p class="mb-4">D{{ $static_head->description }}</p>
+                        <p>
+                            <a href="#" class="btn btn-secondary me-2">{{ $static_head->heading_btn_1 }}</a>
+                            <a href="#" class="btn btn-white-outline">{{ $static_head->heading_btn_2 }}</a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="hero-img-wrap">
-                        <img src="{{ asset("assets/uploads/static/" . $static->heading_image) }}" class="img-fluid" alt="main image">
+                        <img src="{{ asset("assets/uploads/static/" . $static_head->image) }}" class="img-fluid" alt="main image">
                     </div>
                 </div>
             </div>
