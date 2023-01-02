@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\HeadHome;
 use App\Models\Product;
 use App\Models\Rating;
 use App\Models\Review;
@@ -17,7 +18,8 @@ class FrontendController extends Controller
         $some_products = Product::where('trending', '1')->inRandomOrder()->limit(3)->get();
         $featured_products = Product::where('trending', '1')->take(15)->get();
         $trending_category = Category::where('popular', '1')->take(15)->get();
-        return view('frontend.index', compact('featured_products', 'trending_category', 'some_products'));
+        $static_head = HeadHome::first();
+        return view('frontend.index', compact('featured_products', 'trending_category', 'some_products', 'static_head'));
     }
 
     public function category()

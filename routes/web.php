@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\HomeContentController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
@@ -155,6 +156,14 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('update-why/{id}', [StaticContentController::class, 'updateWhy']);
     Route::get('delete-head/{id}', [StaticContentController::class, 'destroyAbout']);
     Route::get('delete-why/{id}', [StaticContentController::class, 'destroyWhy']);
+
+    Route::get('home-head', [HomeContentController::class, 'index']);
+    Route::get('add-home-head', [HomeContentController::class, 'addHead']);
+    Route::post('insert-home-head', [HomeContentController::class, 'insertHead']);
+    Route::get('edit-home-head/{id}', [HomeContentController::class, 'editHead']);
+    Route::put('update-home-head/{id}', [HomeContentController::class, 'updateHead']);
+
+
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewUser']);

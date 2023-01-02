@@ -66,6 +66,14 @@
                  </a>
              </li>
              <li class="nav-item">
+                 <a class="nav-link text-white {{ Request::is('home-head') ? 'active bg-info' : '' }}" href="{{ url('home-head') }}">
+                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                         <i class="material-icons opacity-10">home</i>
+                     </div>
+                     <span class="nav-link-text ms-1">Home Page Content</span>
+                 </a>
+             </li>
+             <li class="nav-item">
                  <a class="nav-link text-white {{ Request::is('static-content') ? 'active bg-info' : '' }}" href="{{ url('static-content') }}">
                      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                          <i class="material-icons opacity-10">content_copy</i>

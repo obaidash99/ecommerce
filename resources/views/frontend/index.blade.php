@@ -14,15 +14,17 @@ Welcome to E-Shop
            <div class="row justify-content-between">
                <div class="col-lg-5">
                    <div class="intro-excerpt">
-                       <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
-                       <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                           vulputate velit imperdiet dolor tempor tristique.</p>
-                       <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+                       <h1>{{ $static_head->title }}</h1>
+                       <p class="mb-4">{{ $static_head->description }}</p>
+                       <p>
+                           <a href="" class="btn btn-secondary me-2">{{ $static_head->btn_1_content }}</a>
+                           <a href="#" class="btn btn-white-outline">{{ $static_head->btn_2_content }}</a>
+                       </p>
                    </div>
                </div>
                <div class="col-lg-7">
                    <div class="hero-img-wrap">
-                       <img src="{{ asset("frontend/images/couch.png") }}" class="img-fluid">
+                       <img src="{{ asset("assets/uploads/static/" . $static_head->image) }}" class="img-fluid">
                    </div>
                </div>
            </div>
