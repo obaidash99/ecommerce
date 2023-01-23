@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController;
+use \Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\FrontendController;
@@ -97,13 +97,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('dashboard', [FrontendController::class, 'index']);
 
-//    Route::resource('', \App\Http\Controllers\Admin\ResCategoryController::class)
-    Route::get('categories', [CategoryController::class, 'index']);
-    Route::get('add-category', [CategoryController::class, 'add']);
-    Route::post('insert-category', [CategoryController::class, 'insert']);
-    Route::get('edit-category/{id}', [CategoryController::class, 'edit']);
-    Route::put('update-category/{id}', [CategoryController::class, 'update']);
-    Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
+    Route::resource('categories',CategoryController::class);
+//    Route::get('categories', [CategoryController::class, 'index']);
+//    Route::get('add-category', [CategoryController::class, 'create']);
+//    Route::post('insert-category', [CategoryController::class, 'store']);
+//    Route::get('edit-category/{id}', [CategoryController::class, 'edit']);
+//    Route::put('update-category/{id}', [CategoryController::class, 'update']);
+//    Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
 
     Route::get('products', [ProductController::class, 'index']);
     Route::get('add-product', [ProductController::class, 'add']);

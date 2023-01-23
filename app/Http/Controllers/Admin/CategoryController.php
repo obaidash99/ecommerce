@@ -14,12 +14,12 @@ class CategoryController extends Controller
         return view('admin.category.index', compact('category'));
     }
 
-    public function add()
+    public function create()
     {
         return view('admin.category.add');
     }
 
-    public function insert(Request $request)
+    public function store(Request $request)
     {
         $category = new Category();
         if ($request->hasFile('image')) {
@@ -41,7 +41,7 @@ class CategoryController extends Controller
         $category->meta_keywords = $request->meta_keywords;
 
         $category->save();
-        return redirect('/categories')->with('status', 'Category Added Successfully');
+        return redirect()->route('categories.index')->with('status', 'Category Added Successfully');
     }
 
     public function edit($id)
@@ -74,7 +74,7 @@ class CategoryController extends Controller
         $category->meta_desc = $request->meta_desc;
         $category->meta_keywords = $request->meta_keywords;
         $category->update();
-        return redirect('/categories')->with('status', 'Category Updated Successfully');
+        return redirect()->route('categories.index')->with('status', 'Category Updated Successfully');
     }
 
     public function destroy($id)
