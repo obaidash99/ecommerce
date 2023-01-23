@@ -5,7 +5,7 @@
     <div class="container vh-100">
         <div class="card">
            <div class="card-header">
-              <h1>Obaida Shurbaji</h1>
+              <h1>{{ Auth::user()->name }}'s Dashboard</h1>
            </div>
             <div class="card-body dashboard">
                 <div class="row">

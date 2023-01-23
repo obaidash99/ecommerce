@@ -97,6 +97,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('dashboard', [FrontendController::class, 'index']);
 
+//    Route::resource('', \App\Http\Controllers\Admin\ResCategoryController::class)
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('add-category', [CategoryController::class, 'add']);
     Route::post('insert-category', [CategoryController::class, 'insert']);

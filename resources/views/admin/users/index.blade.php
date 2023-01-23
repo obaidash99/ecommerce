@@ -4,7 +4,7 @@
 
 <div class="card">
    <div class="card-header">
-      <h3>Registered Users</h3>
+      <h3>Admin: {{Auth::user()->name}}</h3>
       <hr>
    </div>
 
@@ -27,7 +27,7 @@
                <td>{{ $user->name . " " . $user->lname}}</td>
                <td>{{ $user->email }}</td>
                <td>{{ $user->phone }}</td>
-               <td>{{ $user->role_as === '0' ? 'Client' : 'Admin' }}</td>
+               <td>{{ $user->role_as == '0' ? 'Client' : 'Admin' }}</td>
                <td>
                   <a href="{{ url('view-user/' . $user->id) }}" class="btn btn-info">View</a>
                </td>
