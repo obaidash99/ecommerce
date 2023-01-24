@@ -5,8 +5,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\HomeContentController;
-use App\Http\Controllers\Admin\MessagesController;
+//use \Admin\MessagesController;
 use \Admin\ProductController;
+use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\StaticContentController;
 use App\Http\Controllers\Admin\TeamController;
@@ -101,13 +102,15 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::resource('products', ProductController::class);
 
+//    Route::resource('orders', OrdersController::class);
     Route::get('orders', [OrdersController::class, 'index']);
     Route::get('admin/view-order/{id}', [OrdersController::class, 'view']);
-    Route::put('update-order/{id}', [OrdersController::class, 'updateOrder']);
-    Route::get('order-history', [OrdersController::class, 'orderHistory']);
+    Route::put('update-order/{id}', [OrdersController::class, 'update']);
+    Route::get('order-history', [OrdersController::class, 'history']);
 
+//    Route::resource('messages', MessagesController::class)->only(['index', 'show', 'destroy']);
     Route::get('messages', [MessagesController::class, 'index']);
-    Route::get('view-message/{id}', [MessagesController::class, 'view']);
+    Route::get('view-message/{id}', [MessagesController::class, 'show']);
     Route::get('delete-message/{id}', [MessagesController::class, 'destroy']);
 
     Route::get('newsletters', [NewsletterController::class, 'view']);

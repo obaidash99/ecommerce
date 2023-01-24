@@ -12,7 +12,7 @@
                   <h3 class="text-center">
                      New Orders
                      <a href="{{ url('order-history') }}" class="btn btn-warning float-end">Order History</a>
-                  </h4>
+                  </h3>
                </div>
                <div class="card-body">
                   <table class="table table-bordered text-center">

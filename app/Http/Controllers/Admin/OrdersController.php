@@ -20,7 +20,7 @@ class OrdersController extends Controller
         return view('admin.orders.view', compact('orders'));
     }
 
-    public function updateOrder(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $orders = Order::find($id);
         $orders->status = $request->order_status;
@@ -28,7 +28,7 @@ class OrdersController extends Controller
         return redirect('orders')->with('status', 'Order Status Updated Successfully!');
     }
 
-    public function orderHistory()
+    public function history()
     {
         $orders = Order::where('status', '1')->get();
         return view('admin.orders.history', compact('orders'));

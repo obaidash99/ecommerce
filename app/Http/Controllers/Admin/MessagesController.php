@@ -13,14 +13,13 @@ class MessagesController extends Controller
         return view('admin.messages.index', compact('messages'));
     }
 
-    public function view($id) {
+    public function show($id) {
         $message = Message::where('id', $id)->first();
         return view('admin.messages.view', compact('message'));
     }
 
     public function destroy($id) {
-        Message::find($id)->delete();
+        Message::where('id',$id)->delete();
         return redirect('messages')->with('status', 'Message Deleted Successfully!');
-
     }
 }
