@@ -8,7 +8,7 @@
    </div>
 
    <div class="card-body">
-      <form action="{{ url('update-category/' . $category->id) }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('categories.update' , $category) }}" method="POST" enctype="multipart/form-data">
          @csrf
          @method('PUT')
          <div class="row">

@@ -29,8 +29,8 @@
                   <img src="{{ asset('assets/uploads/category/' . $item->image) }}" class="cate-image" alt="img not found">
                </td>
                <td>
-                  <a href="{{ url('edit-category/' . $item->id) }}" class="btn btn-info">Edit</a>
-                  <a href="{{ url('delete-category/' . $item->id) }}" class="btn btn-danger">Delete</a>
+                  <a href="{{ route('categories.edit' , $item) }}" class="btn btn-info">Edit</a>
+                  <a href="{{ route('categories.show' , $item) }}" class="btn btn-danger">Delete</a>
                </td>
             </tr>
             @endforeach

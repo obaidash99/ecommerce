@@ -44,15 +44,13 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('status', 'Category Added Successfully');
     }
 
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $category = Category::find($id);
         return view('admin.category.edit', compact('category'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        $category = Category::find($id);
         if ($request->hasFile('image')) {
             $path = 'assets/uploads/category/' . $category->image;
             if (file_exists($path)) {
@@ -77,9 +75,8 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('status', 'Category Updated Successfully');
     }
 
-    public function destroy($id)
+    public function show(Category $category)
     {
-        $category = Category::find($id);
         if ($category->image) {
             $path = 'assets/uploads/category/' . $category->image;
             if (file_exists($path)) {
@@ -87,6 +84,6 @@ class CategoryController extends Controller
             }
         }
         $category->delete();
-        return redirect('/categories')->with('status', 'Category Deleted Successfully');
+        return redirect()->route('categories.index')->with('status', 'Category Deleted Successfully');
     }
 }
