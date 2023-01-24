@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\HomeContentController;
 use App\Http\Controllers\Admin\MessagesController;
-use App\Http\Controllers\Admin\ProductController;
+use \Admin\ProductController;
 use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\StaticContentController;
 use App\Http\Controllers\Admin\TeamController;
@@ -98,14 +98,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [FrontendController::class, 'index']);
 
     Route::resource('categories', CategoryController::class);
-//    Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
 
-    Route::get('products', [ProductController::class, 'index']);
-    Route::get('add-product', [ProductController::class, 'add']);
-    Route::post('insert-product', [ProductController::class, 'insert']);
-    Route::get('edit-product/{id}', [ProductController::class, 'edit']);
-    Route::put('update-product/{id}', [ProductController::class, 'update']);
-    Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
+    Route::resource('products', ProductController::class);
 
     Route::get('orders', [OrdersController::class, 'index']);
     Route::get('admin/view-order/{id}', [OrdersController::class, 'view']);

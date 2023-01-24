@@ -21,6 +21,16 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|min:5|max:100',
+            'slug' => 'required|string|min:5|max:100',
+            'description' => 'required|string|min:20|max:300',
+            'meta_title' => 'required|string|min:3|max:100',
+            'meta_desc' => 'required|string|min:20|max:300',
+            'meta_keywords' => 'required|string|min:20|max:300',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
+        ]);
+
         $category = new Category();
         if ($request->hasFile('image')) {
 
@@ -30,7 +40,6 @@ class CategoryController extends Controller
             $file->move(public_path('assets/uploads/category/'), $filename);
             $category->image = $filename;
         }
-
         $category->name = $request->name;
         $category->slug = $request->slug;
         $category->description = $request->description;
@@ -51,6 +60,15 @@ class CategoryController extends Controller
 
     public function update(Request $request, Category $category)
     {
+        $request->validate([
+            'name' => 'required|string|min:5|max:100',
+            'slug' => 'required|string|min:5|max:100',
+            'description' => 'required|string|min:20|max:300',
+            'meta_title' => 'required|string|min:3|max:100',
+            'meta_desc' => 'required|string|min:20|max:300',
+            'meta_keywords' => 'required|string|min:20|max:300',
+        ]);
+
         if ($request->hasFile('image')) {
             $path = 'assets/uploads/category/' . $category->image;
             if (file_exists($path)) {

@@ -10,6 +10,20 @@
    <div class="card-body">
       <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
          @csrf
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+
+          @if(session('success') !== null)
+              <div class="alert alert-success">{{session('success')}}</div>
+          @endif
+
          <div class="row">
             <div class="col-md-6 md-3">
                <label for="name">Name</label>

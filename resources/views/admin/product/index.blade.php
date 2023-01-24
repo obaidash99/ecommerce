@@ -33,8 +33,8 @@
                   <img src="{{ asset('assets/uploads/products/' . $item->image) }}" class="cate-image" alt="img not found">
                </td>
                <td>
-                  <a href="{{ url('edit-product/' . $item->id) }}" class="btn btn-info">Edit</a>
-                  <a href="{{ url('delete-product/' . $item->id) }}" class="btn btn-danger">Delete</a>
+                  <a href="{{ route('products.edit' , $item) }}" class="btn btn-info">Edit</a>
+                  <a href="{{ route('products.show' , $item) }}" class="btn btn-danger">Delete</a>
                </td>
             </tr>
             @endforeach

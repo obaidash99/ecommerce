@@ -15,14 +15,32 @@ class ProductController extends Controller
         return view('admin.product.index', compact('products'));
     }
 
-    public function add()
+    public function create()
     {
         $category = Category::all();
         return view('admin.product.add', compact('category'));
     }
 
-    public function insert(Request $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'cate_id' => 'required',
+            'name' => 'required|string|min:5|max:100',
+            'slug' => 'required|string|min:5|max:100',
+            'description' => 'required|string|min:20|max:300',
+            'small_description' => 'required|string|min:20|max:300',
+            'original_price' => 'required|numeric',
+            'selling_price' => 'required|numeric',
+            'tax' => 'required|numeric',
+            'qty' => 'required|numeric',
+//            'status' => 'required',
+//            'trending' => 'required',
+            'meta_title' => 'required|string|min:3|max:100',
+            'meta_desc' => 'required|string|min:20|max:300',
+            'meta_keywords' => 'required|string|min:20|max:300',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
+        ]);
+
         $product = new Product();
         if ($request->hasFile('image')) {
 
@@ -49,19 +67,33 @@ class ProductController extends Controller
         $product->meta_keywords = $request->meta_keywords;
 
         $product->save();
-        return redirect('/products')->with('status', 'Product Added Successfully');
+        return redirect()->route('products.index')->with('status', 'Product Added Successfully');
     }
 
-    public function edit($id)
+    public function edit(Product $product)
     {
-        $product = Product::find($id);
+//        $product = Product::find($id);
         return view('admin.product.edit', compact('product'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        $product = Product::find($id);
-
+        $request->validate([
+//            'cate_id' => 'required',
+            'name' => 'required|string|min:5|max:100',
+            'slug' => 'required|string|min:5|max:100',
+            'description' => 'required|string|min:20|max:300',
+            'small_description' => 'required|string|min:20|max:300',
+            'original_price' => 'required|numeric',
+            'selling_price' => 'required|numeric',
+            'tax' => 'required|numeric',
+            'qty' => 'required|numeric',
+//            'status' => 'required',
+//            'trending' => 'required',
+            'meta_title' => 'required|string|min:3|max:100',
+            'meta_description' => 'required|string|min:20|max:300',
+            'meta_keywords' => 'required|string|min:20|max:300',
+        ]);
         if ($request->hasFile('image')) {
             $path = 'assets/uploads/products/' . $product->image;
             if (file_exists($path)) {
@@ -90,12 +122,12 @@ class ProductController extends Controller
         $product->meta_description = $request->meta_description;
         $product->meta_keywords = $request->meta_keywords;
         $product->update();
-        return redirect('products')->with('status', 'Product Updated Successfully');
+        return redirect()->route('products.index')->with('status', 'Product Updated Successfully');
     }
 
-    public function destroy($id)
+    public function show(Product $product)
     {
-        $product = Product::find($id);
+//        $product = Product::find($id);
         if ($product->image) {
             $path = 'assets/uploads/products/' . $product->image;
             if (file_exists($path)) {
@@ -103,6 +135,6 @@ class ProductController extends Controller
             }
         }
         $product->delete();
-        return redirect('products')->with('status', 'Product Deleted Successfully!');
+        return redirect()->route('products.index')->with('status', 'Product Deleted Successfully!');
     }
 }

@@ -8,9 +8,23 @@
    </div>
 
    <div class="card-body">
-      <form action="{{ url('update-product/' . $product->id) }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('products.update' , $product->id) }}" method="POST" enctype="multipart/form-data">
          @csrf
          @method('PUT')
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+
+          @if(session('success') !== null)
+              <div class="alert alert-success">{{session('success')}}</div>
+          @endif
+
          <div class="row">
             <div class="col-md-12 mb-3">
                <select class="form-select p-2">
