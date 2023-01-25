@@ -64,7 +64,7 @@ Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
 Route::post('update-cart-item', [CartController::class, 'updateProduct']);
 
 Route::get('/contact', [ContactController::class, 'index']);
-Route::post('/send-message', [ContactController::class, 'storeMessage'])->name('front.storeMessage');
+Route::post('/send-message', [ContactController::class, 'storeMessage']);
 
 Route::get('load-wishlist-data', [WishlistController::class, 'wishlistCount']);
 Route::post('add-to-wishlist', [WishlistController::class, 'addToWishlist']);

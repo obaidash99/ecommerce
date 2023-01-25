@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
+
 
 class ContactController extends Controller
 {
@@ -14,7 +17,7 @@ class ContactController extends Controller
     }
 
     public function storeMessage(Request $request) {
-        $request->validate([
+        $validatedData = $request->validate([
             'fname' => 'required|string|min:3|max:30',
             'lname' => 'required|string|min:3|max:30',
             'email' => 'required|email',
@@ -23,6 +26,8 @@ class ContactController extends Controller
         ]);
 
         Message::create($request->all());
+
+        Mail::to('obaidashurbaji99@gmail.com')->send(new ContactMail($validatedData));
 
         return redirect()->back()->with('status', 'Thank You For Reaching Out, We Will Get Back To You Soon!');
     }

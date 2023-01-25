@@ -56,7 +56,7 @@
                                 </div> <!-- /.service -->
                             </div>
                         </div>
-                        <form action="{{ route('front.storeMessage') }}" method="POST" novalidate>
+                        <form action="{{ url('send-message') }}" method="POST" novalidate>
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
