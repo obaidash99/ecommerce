@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\HomeContentController;
-//use \Admin\MessagesController;
 use \Admin\ProductController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\OrdersController;
@@ -19,6 +18,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController as UserFrontendController;
 use App\Http\Controllers\Frontend\NewsletterController;
 use App\Http\Controllers\Frontend\ProductsController;
+use Frontend\ProfileController;
 use App\Http\Controllers\Frontend\RatingController;
 use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserController;
@@ -74,6 +74,8 @@ Route::get('about-us', [AboutUsController::class, 'index']);
 
 
 Route::group(['middleware' => ['auth']], function () {
+
+        Route::resource('profile', ProfileController::class);
 
     Route::get('cart', [CartController::class, 'viewCart']);
     Route::get('checkout', [CheckOutController::class, 'index']);
