@@ -30,7 +30,7 @@ $(document).ready(function () {
         });
     }
 
-    $(".add-to-cart").click(function (e) {
+    $(document).on("click", ".add-to-cart", function (e) {
         e.preventDefault();
         var productId = $(this).closest(".product-data").find(".prod-id").val();
         var productQty = $(this)
@@ -46,14 +46,14 @@ $(document).ready(function () {
                 productQty: productQty || "1",
             },
             success: function (response) {
-                // Swal.fire(response.status);
-                window.location.replace(response.url)
+                Swal.fire(response.status);
+                // window.location.replace(response.url);
                 loadCart();
             },
         });
     });
 
-    $(".add-to-wishlist").click(function (e) {
+    $(document).on("click", ".add-to-wishlist", function (e) {
         e.preventDefault();
         var productId = $(this).closest(".product-data").find(".prod-id").val();
 
@@ -64,47 +64,15 @@ $(document).ready(function () {
                 productId: productId,
             },
             success: function (response) {
-                window.location.replace(response.url)
-                // Swal.fire(response.status);
+                // window.location.replace(response.url);
+                Swal.fire(response.status);
                 loadWishlist();
             },
         });
     });
 
-    //  $(".increment-btn").click(function (e) {
-    //      e.preventDefault();
-
-    //      var inc_value = $(this)
-    //          .closest(".product-data")
-    //          .find(".qty-input")
-    //          .val();
-    //      var value = parseInt(inc_value, 10);
-    //      value = isNaN(value) ? 0 : value;
-    //      if (value < 10) {
-    //          value++;
-    //          $(this).closest(".product-data").find(".qty-input").val(value);
-    //      }
-    //  });
-
-    //  $(".decrement-btn").click(function (e) {
-    //      e.preventDefault();
-
-    //      var dec_value = $(this)
-    //          .closest(".product-data")
-    //          .find(".qty-input")
-    //          .val();
-    //      var value = parseInt(dec_value, 10);
-    //      value = isNaN(value) ? 0 : value;
-    //      if (value > 1) {
-    //          value--;
-    //          $(this).closest(".product-data").find(".qty-input").val(value);
-    //      }
-    //  });
-
-    // $(".delete-cart-item").click(function (e) {
     $(document).on("click", ".delete-cart-item", function (e) {
         e.preventDefault();
-
         var prod_id = $(this).closest(".product-data").find(".prod_id").val();
 
         $.ajax({
@@ -166,19 +134,18 @@ $(document).ready(function () {
     });
 });
 
-
 (function () {
-    'use strict';
+    "use strict";
 
     var tinyslider = function () {
-        var el = document.querySelectorAll('.testimonial-slider');
+        var el = document.querySelectorAll(".testimonial-slider");
 
         if (el.length > 0) {
             var slider = tns({
-                container: '.testimonial-slider',
+                container: ".testimonial-slider",
                 items: 1,
-                axis: 'horizontal',
-                controlsContainer: '#testimonial-nav',
+                axis: "horizontal",
+                controlsContainer: "#testimonial-nav",
                 swipeAngle: false,
                 speed: 700,
                 nav: true,
@@ -194,16 +161,19 @@ $(document).ready(function () {
 
     var sitePlusMinus = function () {
         var value,
-            quantity = document.getElementsByClassName('quantity-container');
+            quantity = document.getElementsByClassName("quantity-container");
 
         function createBindings(quantityContainer) {
-            var quantityAmount = quantityContainer.getElementsByClassName('quantity-amount')[0];
-            var increase = quantityContainer.getElementsByClassName('increase')[0];
-            var decrease = quantityContainer.getElementsByClassName('decrease')[0];
-            increase.addEventListener('click', function (e) {
+            var quantityAmount =
+                quantityContainer.getElementsByClassName("quantity-amount")[0];
+            var increase =
+                quantityContainer.getElementsByClassName("increase")[0];
+            var decrease =
+                quantityContainer.getElementsByClassName("decrease")[0];
+            increase.addEventListener("click", function (e) {
                 increaseValue(e, quantityAmount);
             });
-            decrease.addEventListener('click', function (e) {
+            decrease.addEventListener("click", function (e) {
                 decreaseValue(e, quantityAmount);
             });
         }
