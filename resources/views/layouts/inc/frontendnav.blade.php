@@ -23,21 +23,20 @@
                 <li class="nav-item {{Request::is('all-products') ? 'active' : ''}}"><a class="nav-link" href="{{ asset('all-products') }}">Products</a></li>
                 <li class="nav-item {{Request::is('category') ? 'active' : ''}}"><a class="nav-link" href="{{asset('category')}}">Categories</a></li>
                 <li class="nav-item {{Request::is('about') ? 'active' : ''}}"><a class="nav-link" href="{{asset('about-us')}}">About us</a></li>
-{{--                <li class="nav-item {{Request::is('blog') ? 'active' : ''}}"><a class="nav-link" href="{{asset('#')}}">Blog</a></li>--}}
                 <li class="nav-item {{Request::is('contact') ? 'active' : ''}}"><a class="nav-link" href="{{asset('contact')}}">Contact us</a></li>
             </ul>
 
-            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                <li>
+            <ul class="custom-navbar-nav navbar-nav mb-2 mb-md-0 ms-5">
+                <li class="nav-item {{Request::is('wishlist') ? 'active' : ''}}">
                     <a class="nav-link link-number" href="{{ asset('wishlist') }}">
                         <i class="fa-regular fa-heart"></i>
-                        <span class="badge badge-light wishlist-count">0</span>
+                        <span class="badge badge-light wishlist-count" style="padding: 2px 6px; border-radius: 50%; font-size: 12px; background-color: gray;">0</span>
                     </a>
                 </li>
-                <li>
+                <li class="nav-item {{Request::is('cart') ? 'active' : ''}}">
                     <a class="nav-link link-number" href="{{ asset('cart') }}">
                         <i class="fa fa-cart-shopping"></i>
-                        <span class="badge badge-light cart-count">0</span>
+                        <span class="badge badge-light cart-count" style="padding: 2px 6px; border-radius: 50%; font-size: 12px; background-color: gray;">0</span>
                     </a>
                 </li>
 
@@ -58,9 +57,9 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-regular fa-user"></i>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #3b5d50">
                                 <li>
-                                   <a class="dropdown-item" href="{{ url('#') }}"><i class="fa-solid fa-user"></i> &nbsp;{{ Auth::user()->name }}</a>
+                                   <a class="dropdown-item" href="{{ url('profile') }}"><i class="fa-solid fa-user"></i> &nbsp;{{ Auth::user()->name }}</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="{{ url('my-orders') }}"><i class="fa fa-bag-shopping"></i> &nbsp;Orders</a>
