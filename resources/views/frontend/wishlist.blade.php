@@ -49,7 +49,11 @@ My Wishlist
                </div>
             @endforeach
          @else
-            <h4 class="text-center my-3">There is no Products in your Wishlist</h4>
+            <div class="card-body text-center">
+            <h2 class="text-center my-3">There is no Products in your Wishlist</h2>
+            <hr>
+            <a href="{{ url('category') }}" class="btn btn-outline-primary float-center">Continue Shopping</a>
+         </div>
          @endif
       </div>
    </div>

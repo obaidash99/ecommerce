@@ -63,7 +63,7 @@ My Cart
          </div>
       @else
          <div class="card-body text-center">
-            <h2>Your Cart <i class="fa fa-shopping-cart"></i> is Empty</h2>
+            <h2>Your Cart is Empty</h2>
             <hr>
             <a href="{{ url('category') }}" class="btn btn-outline-primary float-center">Continue Shopping</a>
          </div>
