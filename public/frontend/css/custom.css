@@ -120,14 +120,14 @@ a {
 * Author URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 body {
     overflow-x: hidden;
     position: relative;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     line-height: 28px;
     color: #6a6a6a;
@@ -189,7 +189,7 @@ a.more {
 }
 @media (min-width: 768px) {
     .custom-navbar .custom-navbar-nav li a:before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 8px;
@@ -306,11 +306,11 @@ a.more {
     }
 }
 .hero .hero-img-wrap:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 255px;
     height: 217px;
-    background-image: url('../images/dots-light.svg');
+    background-image: url("../images/dots-light.svg");
     background-size: contain;
     background-repeat: no-repeat;
     right: -100px;
@@ -436,7 +436,7 @@ a.more {
     left: 0;
     right: 0;
     position: absolute;
-    content: '';
+    content: "";
     background: #dce5e4;
     height: 0%;
     z-index: -1;
@@ -465,10 +465,10 @@ a.more {
 }
 .why-choose-section .img-wrap:before {
     position: absolute;
-    content: '';
+    content: "";
     width: 255px;
     height: 217px;
-    background-image: url('../images/dots-yellow.svg');
+    background-image: url("../images/dots-yellow.svg");
     background-repeat: no-repeat;
     background-size: contain;
     -webkit-transform: translate(-40%, -40%);
@@ -489,7 +489,7 @@ a.more {
     margin-bottom: 20px;
 }
 .feature .icon:before {
-    content: '';
+    content: "";
     width: 33px;
     height: 33px;
     position: absolute;
@@ -520,10 +520,10 @@ a.more {
 }
 .we-help-section .imgs-grid:before {
     position: absolute;
-    content: '';
+    content: "";
     width: 255px;
     height: 217px;
-    background-image: url('../images/dots-green.svg');
+    background-image: url("../images/dots-green.svg");
     background-size: contain;
     background-repeat: no-repeat;
     -webkit-transform: translate(-40%, -40%);
@@ -577,7 +577,7 @@ a.more {
     padding-left: 20px;
 }
 .custom-list li:before {
-    content: '';
+    content: "";
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -618,7 +618,7 @@ a.more {
     position: relative;
 }
 .popular-product .product-item-sm .thumbnail:before {
-    content: '';
+    content: "";
     position: absolute;
     border-radius: 20px;
     background: #dce5e4;
@@ -731,7 +731,7 @@ a.more {
     left: 0;
     top: 0;
     position: absolute;
-    content: '';
+    content: "";
     border-radius: 50%;
     -webkit-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
@@ -821,7 +821,7 @@ a.more {
 .footer-section .subscription-form .form-control {
     height: 50px;
     border-radius: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 .footer-section .subscription-form .form-control:active,
 .footer-section .subscription-form .form-control:focus {
@@ -905,7 +905,7 @@ a.more {
 .form-control {
     height: 50px;
     border-radius: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 .form-control:active,
 .form-control:focus {
@@ -1006,9 +1006,13 @@ textarea {
 }
 .thankyou-icon:before {
     position: absolute;
-    content: '';
+    content: "";
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background: rgba(59, 93, 80, 0.2);
+}
+
+.special-nav:hover {
+    background-color: transparent;
 }

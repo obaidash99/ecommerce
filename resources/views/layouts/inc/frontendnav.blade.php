@@ -59,14 +59,14 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #3b5d50">
                                 <li>
-                                   <a class="dropdown-item" href="{{ url('profile') }}"><i class="fa-solid fa-user"></i> &nbsp;{{ Auth::user()->name }}</a>
+                                   <a class="dropdown-item special-nav" href="{{ url('profile') }}"><i class="fa-solid fa-user"></i> &nbsp;{{ Auth::user()->name }}</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ url('my-orders') }}"><i class="fa fa-bag-shopping"></i> &nbsp;Orders</a>
+                                    <a class="dropdown-item special-nav" href="{{ url('my-orders') }}"><i class="fa fa-bag-shopping"></i> &nbsp;Orders</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();" class="dropdown-item">
+                               document.getElementById('logout-form').submit();" class="dropdown-item special-nav">
                                         <i class="fa fa-sign-out me-sm-1"></i>
                                         <span class="d-sm-inline d-none">{{ __('Logout') }}</span>
                                     </a>
