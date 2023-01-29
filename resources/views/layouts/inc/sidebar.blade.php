@@ -122,7 +122,7 @@
                  </a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link text-white {{ Request::is('footer') ? 'active bg-info' : '' }}" href="{{ url('footer') }}">
+                 <a class="nav-link text-white {{ Request::is('footer') ? 'active bg-info' : '' }}" href="{{ route('footer.index') }}">
                      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                          <i class="material-icons opacity-10">square_foot</i>
                      </div>

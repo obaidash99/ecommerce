@@ -18,17 +18,13 @@ class CreateFootersTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->mediumText('description');
-            $table->string('main-image');
-            $table->string('social_1_content');
+            $table->string('main_image');
             $table->string('social_1_link');
             $table->string('social_1_img');
-            $table->string('social_2_content');
             $table->string('social_2_link');
             $table->string('social_2_img');
-            $table->string('social_3_content');
             $table->string('social_3_link');
             $table->string('social_3_img');
-            $table->string('social_4_content');
             $table->string('social_4_link');
             $table->string('social_4_img');
         });
