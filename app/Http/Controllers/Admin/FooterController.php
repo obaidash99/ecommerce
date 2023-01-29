@@ -15,7 +15,7 @@ class FooterController extends Controller
      */
     public function index()
     {
-        $footer = Footers::first();
+        $footer = Footers::first()->get();
         return view('admin.static.footer.index', compact('footer'));
     }
 
@@ -40,15 +40,10 @@ class FooterController extends Controller
         $request->validate([
             'title' => 'required|string|min:3|max:50',
             'description' => 'required|string|min:20|max:300',
-            'main_image' => 'required|image|mimes:jpeg,png,jpg',
             'social_1_link' => 'required|string|min:3|max:50',
-            'social_1_img' => 'required|image|mimes:jpeg,png,jpg',
             'social_2_link' => 'required|string|min:3|max:50',
-            'social_2_img' => 'required|image|mimes:jpeg,png,jpg',
             'social_3_link' => 'required|string|min:3|max:50',
-            'social_3_img' => 'required|image|mimes:jpeg,png,jpg',
             'social_4_link' => 'required|string|min:3|max:50',
-            'social_4_img' => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
         $footer = new Footers();
@@ -81,7 +76,7 @@ class FooterController extends Controller
             $file->move(public_path('assets/uploads/static'), $filename);
             $footer->social_3_img = $filename;
         }
-        if ($request->hasFile('social4_img')) {
+        if ($request->hasFile('social_4_img')) {
             $file = $request->file('social_4_img');
             $ext = $file->extension();
             $filename = time() . '.' . $ext;
@@ -96,7 +91,7 @@ class FooterController extends Controller
         $footer->social_3_link = $request->social_3_link;
         $footer->social_4_link = $request->social_4_link;
         $footer->save();
-        return redirect()->router('footer.index')->with('status', 'Content Added Successfully');
+        return redirect()->route('footer.index')->with('status', 'Content Added Successfully');
     }
 
     /**

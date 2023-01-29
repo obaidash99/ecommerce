@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="card">
+    <div class="card table-responsive">
         <div class="card-header">
             <h3>Footer Content</h3>
             <hr>
@@ -13,27 +13,38 @@
                 <thead>
                 <tr>
                     <th>Title</th>
-                    <th>Name</th>
                     <th>Description</th>
-                    <th>Selling Price</th>
-                    <th>Image</th>
+                    <th>Main Image</th>
+                    <th>Image: Social Media 1</th>
+                    <th>Image: Social Media 2</th>
+                    <th>Image: Social Media 3</th>
+                    <th>Image: Social Media 4</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($products as $item)
+                @foreach ($footer as $item)
                     <tr>
-                        <td>{{ $item->id }}</td>
-                        <td>{{ $item->category->name}}</td>
-                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->title }}</td>
                         <td>{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</td>
-                        <td>{{ $item->selling_price }}</td>
                         <td>
-                            <img src="{{ asset('assets/uploads/products/' . $item->image) }}" class="cate-image" alt="img not found">
+                            <img src="{{ asset('assets/uploads/static/' . $item->main_image) }}" class="cate-image" alt="img not found">
                         </td>
                         <td>
-                            <a href="{{ route('products.edit' , $item) }}" class="btn btn-info">Edit</a>
-                            <a href="{{ route('products.show' , $item) }}" class="btn btn-danger">Delete</a>
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_1_img) }}" class="cate-image" alt="img not found">
+                        </td>
+                        <td>
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_2_img) }}" class="cate-image" alt="img not found">
+                        </td>
+                        <td>
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_3_img) }}" class="cate-image" alt="img not found">
+                        </td>
+                        <td>
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_4_img) }}" class="cate-image" alt="img not found">
+                        </td>
+                        <td>
+                            <a href="{{ route('footer.edit' , $item) }}" class="btn btn-info">Edit</a>
+                            <a href="{{ route('footer.show' , $item) }}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 @endforeach
