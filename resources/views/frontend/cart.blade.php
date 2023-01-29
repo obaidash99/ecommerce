@@ -58,7 +58,7 @@ My Cart
             @endforeach
          </div>
          <div class="card-footer">
-            <h6 class="d-inline-block m-auto">Total Price: $ {{ $total }}</h6>
+            <h4 class="d-inline-block m-auto">Total Price: $ {{ $total }}</h4>
             <a href="{{ url("checkout") }}" class="btn btn-outline-success float-end">Proceed To Checkout</a>
          </div>
       @else

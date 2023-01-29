@@ -162,6 +162,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('edit-home-sec/{id}', [HomeContentController::class, 'editSec']);
     Route::put('update-home-sec/{id}', [HomeContentController::class, 'updateSec']);
 
+    Route::resource('footer', \Admin\FooterController::class);
+
 
 
     Route::get('users', [DashboardController::class, 'users']);
