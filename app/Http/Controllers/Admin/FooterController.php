@@ -131,10 +131,10 @@ class FooterController extends Controller
         $request->validate([
             'title' => 'required|string|min:3|max:50',
             'description' => 'required|string|min:20|max:300',
-            'social_1_link' => 'required|string|min:3|max:50',
-            'social_2_link' => 'required|string|min:3|max:50',
-            'social_3_link' => 'required|string|min:3|max:50',
-            'social_4_link' => 'required|string|min:3|max:50',
+            'social_1_link' => 'required|url',
+            'social_2_link' => 'required|url',
+            'social_3_link' => 'required|url',
+            'social_4_link' => 'required|url',
         ]);
 
         if($request->hasFile('main_image')) {
@@ -209,8 +209,8 @@ class FooterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+//    public function destroy($id)
+//    {
+//        //
+//    }
 }

@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-8 mb-3">
                         <label for="main_image">Main Image</label>
-                        <input type="file" name="main_image" id="main_image" value="{{ $footer->main_image }}" class="form-control border p-2">
+                        <input type="file" name="main_image" id="main_image" class="form-control border p-2">
                     </div>
                     @if($footer->main_image)
                         <div class="col-md-4 mb-3">

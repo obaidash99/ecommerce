@@ -28,23 +28,24 @@
                         <td>{{ $item->title }}</td>
                         <td>{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</td>
                         <td>
-                            <img src="{{ asset('assets/uploads/static/' . $item->main_image) }}" class="cate-image" alt="img not found">
+                            <img src="{{ asset('assets/uploads/static/' . $item->main_image) }}" class="footer-icon" alt="img not found">
                         </td>
                         <td>
-                            <img src="{{ asset('assets/uploads/static/' . $item->social_1_img) }}" class="cate-image" alt="img not found">
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_1_img) }}" class="footer-icon" alt="img not found">
                         </td>
                         <td>
-                            <img src="{{ asset('assets/uploads/static/' . $item->social_2_img) }}" class="cate-image" alt="img not found">
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_2_img) }}" class="footer-icon" alt="img not found">
                         </td>
                         <td>
-                            <img src="{{ asset('assets/uploads/static/' . $item->social_3_img) }}" class="cate-image" alt="img not found">
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_3_img) }}" class="footer-icon" alt="img not found">
                         </td>
                         <td>
-                            <img src="{{ asset('assets/uploads/static/' . $item->social_4_img) }}" class="cate-image" alt="img not found">
+                            <img src="{{ asset('assets/uploads/static/' . $item->social_4_img) }}" class="footer-icon" alt="img not found">
                         </td>
                         <td>
-                            <a href="{{ route('footer.edit' , $item) }}" class="btn btn-info">Edit</a>
-                            <a href="{{ route('footer.show' , $item) }}" class="btn btn-danger">Delete</a>
+                            <a href="{{ route('footer.edit' , $item) }}" class="btn btn-info">
+                                <span class="material-symbols-outlined">edit</span>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
