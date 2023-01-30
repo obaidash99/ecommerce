@@ -86,11 +86,13 @@
                <label for="meta_keywords">Meta Keywords</label>
                <textarea name="meta_keywords" rows="3" id='meta_keywords' class="form-control border p-2">{{ $product->meta_keywords }}</textarea>
             </div>
-            <div class="col-md-12 mb-3">
+            <div class="col-md-6 mb-3">
                <input type="file" name="image" class="form-control border p-2">
             </div>
             @if($product->image)
+                <div class="col-md-6 mb-3">
                <img src="{{ asset('assets/uploads/products/' . $product->image) }}" class='edit-image mb-3' alt="product image"/>
+                </div>
             @endif
             <div class="col-md-12 mb-3">
                <button type="submit" class="btn btn-primary">Update</button>

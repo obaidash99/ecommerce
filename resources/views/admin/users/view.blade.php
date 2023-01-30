@@ -9,7 +9,7 @@
             <div class="card-header">
                <h3>
                   User Details
-                  <a href="{{ url('users') }}" class="btn btn-warning float-end">Back</a>
+                  <a href="{{ route('users.index') }}" class="btn btn-warning float-end">Back</a>
                </h3>
                <hr>
             </div>
@@ -17,7 +17,7 @@
                <div class="row">
                   <div class="col-md-4 mt-3">
                      <label for="role">Role</label>
-                     <div class="p-2 border" id="role">{{ $user->role_as == '0' ? 'User' : 'Admin' }}</div>
+                     <div class="p-2 border" id="role">{{ $user->role_as == '0' ? 'Client' : 'Admin' }}</div>
                   </div>
                   <div class="col-md-4 mt-3">
                      <label for="fname">First Name</label>

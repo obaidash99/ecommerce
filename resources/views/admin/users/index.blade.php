@@ -16,6 +16,7 @@
                <th>Name</th>
                <th>Email</th>
                <th>Phone Number</th>
+               <th>Image</th>
                <th>Role</th>
                <th>Action</th>
             </tr>
@@ -27,9 +28,14 @@
                <td>{{ $user->name . " " . $user->lname}}</td>
                <td>{{ $user->email }}</td>
                <td>{{ $user->phone }}</td>
+                <td>
+                    <img src="{{ asset('assets/uploads/users/' . $user->image) }}" class="cate-image" alt="img not found">
+                </td>
                <td>{{ $user->role_as == '0' ? 'Client' : 'Admin' }}</td>
                <td>
-                  <a href="{{ url('view-user/' . $user->id) }}" class="btn btn-info">View</a>
+                  <a href="{{ route('users.show' , $user->id) }}" class="btn btn-info">View</a>
+                  <a href="{{ route('users.edit' , $user->id) }}" class="btn btn-success">Edit</a>
+                  <a href="{{ route('users.destroy' , $user->id) }}" class="btn btn-danger">Delete</a>
                </td>
             </tr>
             @endforeach
