@@ -43,6 +43,14 @@
                     </div>
                     <div>
                         <h3>
+                            <a class="nav-link {{ Request::is('home-head') ? 'active bg-info' : '' }}" href="{{ url('home-head') }}">
+                                <i class="material-icons opacity-10">home</i>
+                                <span>Home Page Content</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <div>
+                        <h3>
                             <a class="nav-link {{ Request::is('static-content') ? 'active bg-info' : '' }}" href="{{ url('static-content') }}">
                                 <i class="material-icons opacity-10">content_copy</i>
                                 <span>About Page Content</span>
@@ -70,6 +78,14 @@
                             <a class="nav-link {{ Request::is('testimonials') ? 'active bg-info' : '' }}" href="{{ url('testimonials') }}">
                                 <i class="material-icons opacity-10">quiz</i>
                                 <span>Testimonials</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <div>
+                        <h3>
+                            <a class="nav-link {{ Request::is('newsletter') ? 'active bg-info' : '' }}" href="{{ url('newsletters') }}">
+                                <i class="material-icons opacity-10">feed</i>
+                                <span>Newsletter</span>
                             </a>
                         </h3>
                     </div>
