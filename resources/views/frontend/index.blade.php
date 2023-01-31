@@ -17,8 +17,8 @@ Welcome to E-Shop
                        <h1>{{ $static_head->title }}</h1>
                        <p class="mb-4">{{ $static_head->description }}</p>
                        <p>
-                           <a href="" class="btn btn-secondary me-2">{{ $static_head->btn_1_content }}</a>
-                           <a href="#" class="btn btn-white-outline">{{ $static_head->btn_2_content }}</a>
+                           <a href="{{ url('all-products') }}" class="btn btn-secondary me-2">{{ $static_head->btn_1_content }}</a>
+{{--                           <a href="#" class="btn btn-white-outline">{{ $static_head->btn_2_content }}</a>--}}
                        </p>
                    </div>
                </div>

@@ -3,21 +3,20 @@ body {
 }
 
 .search-bar {
-    width: 30%;
-    /*margin-left: 8%;*/
-    /*margin-right: 8%;*/
+    width: 100%;
+    margin: 20px;
 }
-/*.link-number{*/
-/*    position: relative;*/
-/*    margin-right: 20px;*/
-/*}*/
+.link-number{
+    position: relative;
+    margin-right: 20px;
+}
 
-/*.cart-count, .wishlist-count {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    color: yellow;*/
-/*}*/
+.cart-count, .wishlist-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: yellow;
+}
 
 .ui-menu {
     z-index: 3000 !important;

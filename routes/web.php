@@ -1,7 +1,7 @@
 <?php
 
 use \Admin\CategoryController;
-use \Admin\DashboardController;
+//use \Admin\DashboardController;
 use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\HomeContentController;
@@ -164,6 +164,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::resource('footer', \Admin\FooterController::class);
 
-    Route::resource('users', DashboardController::class);
+    Route::resource('users', \Admin\DashboardController::class);
 
 });

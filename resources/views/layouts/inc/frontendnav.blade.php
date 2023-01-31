@@ -1,17 +1,7 @@
-<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark d-flex flex-column" arial-label="Furni navigation bar">
 
     <div class="container">
         <a class="navbar-brand" href="{{asset('/')}}">Electronics<span>.</span></a>
-
-{{--        <div class="search-bar">--}}
-{{--            <form action="{{ url('search-product') }}" method="POST">--}}
-{{--                @csrf--}}
-{{--                <div class="input-group">--}}
-{{--                    <input type="search" class="form-control" placeholder="Search Products" required name="product_name" id="search-product">--}}
-{{--                    <button type="submit" class="input-group-text"><i class="fa fa-search"></i></button>--}}
-{{--                </div>--}}
-{{--            </form>--}}
-{{--        </div>--}}
 
         <button class="navbar-toggler mb-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -78,6 +68,18 @@
                         </li>
                 @endguest
             </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search-bar">
+            <form action="{{ url('search-product') }}" method="POST">
+                @csrf
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search Products" required name="product_name" id="search-product">
+                    <button type="submit" class="input-group-text"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
         </div>
     </div>
 
