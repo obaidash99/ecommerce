@@ -100,7 +100,7 @@ CheckOut
                         <hr>
                         <input type="hidden" name="payment_mode" value="COD">
                         <button type="submit" class="btn btn-primary w-100 my-3 py-2">Place Order || COD</button>
-                        <div id="paypal-button-container"></div>
+{{--                        <div id="paypal-button-container"></div>--}}
                         @else
                         <h3 class="text-center">Cart is Empty</h3>
                         @endif
